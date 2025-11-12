@@ -4,6 +4,10 @@ import { lazy, Suspense } from 'react'
 import LoadingSpinner from '@/components/LoadingSpinner'
 
 import Home from '@/pages/Home'
+import Footer from './components/Footer'
+import HeaderLayout from './pages/layout/HeaderLayout'
+import HumanResources from './components/HumanResources'
+import NewsDetail from './components/NewsDetail'
 
 const AuthLayout = lazy(() => import('@/pages/auth/AuthLayout'))
 const Login = lazy(() => import('@/pages/auth/Login'))
@@ -22,7 +26,33 @@ const AppRouter = () => {
       <Routes>
         <Route
           path="/"
-          element={<Home />}
+          element={
+            <>
+              <HeaderLayout />
+              <Home />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="human-resources"
+          element={
+            <>
+              <HeaderLayout />
+              <HumanResources />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="news-detail/:id"
+          element={
+            <>
+              <HeaderLayout />
+              <NewsDetail />
+              <Footer />
+            </>
+          }
         />
         <Route
           path="auth"
@@ -32,10 +62,10 @@ const AppRouter = () => {
             path="login"
             element={<Login />}
           />
-          <Route
+          {/* <Route
             path="register"
             element={<Register />}
-          />
+          /> */}
         </Route>
 
         <Route

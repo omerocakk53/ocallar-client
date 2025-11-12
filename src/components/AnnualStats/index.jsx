@@ -1,0 +1,46 @@
+import React from 'react'
+import annualStatsData from './annual-stats-data'
+import ProgressBox from './ProgressBox'
+import AnnualStatsImage from './AnnualStatsImage'
+
+const AnnualStats = () => {
+  const { content, image } = annualStatsData
+
+  return (
+    <section className="annual-stats">
+      <div className="auto-container">
+        <div className="row clearfix">
+          <div className="col-lg-6 col-md-12 col-sm-12 content-column">
+            <div id="content_block_two">
+              <div className="content-box">
+                <div className="sec-title left">
+                  <h5>{content.subtitle}</h5>
+                  <h2>{content.title}</h2>
+                </div>
+                <div className="text">
+                  <p>{content.text}</p>
+                </div>
+                <div className="inner-box clearfix">
+                  {content.progressBoxes.map((box, index) => (
+                    <ProgressBox
+                      key={index}
+                      {...box}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-12 col-sm-12 image-column">
+            <AnnualStatsImage
+              src={image.src}
+              pattern={image.pattern}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default AnnualStats

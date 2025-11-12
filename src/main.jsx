@@ -7,6 +7,7 @@ import { store } from '@/store'
 import fetcher from '@/api/fetcher'
 import { SWRConfig } from 'swr'
 import { Toaster } from 'react-hot-toast'
+import '@/style/index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
