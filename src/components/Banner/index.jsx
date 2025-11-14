@@ -30,12 +30,15 @@ const Banner = () => {
           <SwiperSlide
             key={slide.id}
             className={`owl-item ${index === activeIndex ? 'active' : ''}`}
+            style={{
+              opacity: index === activeIndex ? 1 : 0,
+              maxHeight: '650px',
+            }}
           >
             <BannerSlide slide={slide} />
           </SwiperSlide>
         ))}
       </Swiper>
-
       <BannerNav />
     </section>
   )
