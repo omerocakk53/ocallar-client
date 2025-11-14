@@ -5,18 +5,18 @@
   "tsx": false,
   "tailwind": {
     "config": "",
-    "css": "src/style/index.css",
+    "css": "@/admin/style/tailwind.css",
     "baseColor": "gray",
     "cssVariables": true,
-    "prefix": ""
+    "prefix": "oc"
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "components": "@/admin/components",
+    "utils": "@/admin/lib/utils",
+    "ui": "@/admin/components/ui",
+    "lib": "@/admin/lib",
+    "hooks": "@/admin/hooks"
   },
   "registries": {}
 }

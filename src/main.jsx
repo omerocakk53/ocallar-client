@@ -7,8 +7,7 @@ import { store } from '@/store'
 import fetcher from '@/api/fetcher'
 import { SWRConfig } from 'swr'
 import { Toaster } from 'react-hot-toast'
-import '@/style/index.css'
-
+import Support from '@/components/Support'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>

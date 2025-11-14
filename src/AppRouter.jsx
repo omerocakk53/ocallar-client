@@ -1,59 +1,56 @@
 import { Routes, Route } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
-import LoadingSpinner from '@/components/LoadingSpinner'
+import Footer from '@/components/Footer'
+import HeaderLayout from '@/pages/layout/HeaderLayout'
+import HumanResources from '@/components/HumanResources'
+import NewsDetail from '@/components/NewsDetail'
+import News from '@/admin/pages/News/index'
+import MainLayout from '@/pages/layout/MainLayout'
+import useAdminRoutes from '@/AdminRoutes'
+import LazyLoading from '@/components/LazyLoading'
 
-import Home from '@/pages/Home'
-import Footer from './components/Footer'
-import HeaderLayout from './pages/layout/HeaderLayout'
-import HumanResources from './components/HumanResources'
-import NewsDetail from './components/NewsDetail'
-
+const Home = lazy(() => import('@/pages/Home'))
 const AuthLayout = lazy(() => import('@/pages/auth/AuthLayout'))
 const Login = lazy(() => import('@/pages/auth/Login'))
 const Register = lazy(() => import('@/pages/auth/Register'))
 
-const DashboardLayout = lazy(() => import('@/pages/dashboard/Layout'))
-const Dashboard = lazy(() => import('@/pages/dashboard/Dashboard'))
-
-const Items = lazy(() => import('@/pages/dashboard/item'))
-const ItemsCreate = lazy(() => import('@/pages/dashboard/item/ItemCreate'))
-const ItemsDetail = lazy(() => import('@/pages/dashboard/item/ItemDetail'))
-
 const AppRouter = () => {
+  const adminRoutes = useAdminRoutes()
   return (
-    <Suspense fallback={<LoadingSpinner />}>
+    <Suspense fallback={<LazyLoading />}>
       <Routes>
+        {adminRoutes}
         <Route
           path="/"
           element={
             <>
-              <HeaderLayout />
-              <Home />
-              <Footer />
+              <MainLayout />
             </>
           }
-        ></Route>
-        <Route
-          path="human-resources"
-          element={
-            <>
-              <HeaderLayout />
-              <HumanResources />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="news-detail/:id"
-          element={
-            <>
-              <HeaderLayout />
-              <NewsDetail />
-              <Footer />
-            </>
-          }
-        />
+        >
+          <Route
+            index
+            element={<Home />}
+          />
+          <Route
+            path="human-resources"
+            element={
+              <>
+                <HumanResources />
+              </>
+            }
+          />
+          <Route
+            path="news-detail/:id"
+            element={
+              <>
+                <NewsDetail />
+              </>
+            }
+          />
+        </Route>
+
         <Route
           path="auth"
           element={<AuthLayout />}
@@ -66,31 +63,6 @@ const AppRouter = () => {
             path="register"
             element={<Register />}
           /> */}
-        </Route>
-
-        <Route
-          path="dashboard"
-          element={<DashboardLayout />}
-        >
-          <Route
-            index
-            element={<Dashboard />}
-          />
-
-          <Route path="items">
-            <Route
-              index
-              element={<Items />}
-            />
-            <Route
-              path="create"
-              element={<ItemsCreate />}
-            />
-            <Route
-              path=":id"
-              element={<ItemsDetail />}
-            />
-          </Route>
         </Route>
       </Routes>
     </Suspense>

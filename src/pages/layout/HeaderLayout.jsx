@@ -5,7 +5,7 @@ import HeaderGo from '@/components/HeaderGo'
 import { useInView } from 'react-intersection-observer'
 import Banner from '@/components/Banner'
 
-const FixLayout = () => {
+const HeaderLayout = () => {
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: false,
@@ -27,4 +27,4 @@ const FixLayout = () => {
   )
 }
 
-export default FixLayout
+export default HeaderLayout
