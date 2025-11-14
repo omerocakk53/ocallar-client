@@ -2,7 +2,7 @@ import { useField } from 'formik'
 import { Label } from '@/admin/components/ui/label'
 import { useState, useEffect } from 'react'
 import { FaX } from 'react-icons/fa6'
-import Button from '@/components/Button' // Button component'inizi import edin
+import { Button } from '@/admin/components/ui/button'
 
 const FormikImageInput = ({ label, ...props }) => {
   const [field, meta, helpers] = useField(props)
@@ -62,7 +62,7 @@ const FormikImageInput = ({ label, ...props }) => {
         {preview ? (
           <div className="relative">
             <img
-              src={preview}
+              src={'http://localhost:3000' + preview}
               alt="Preview"
               className="h-20 w-20 object-cover rounded border"
             />
