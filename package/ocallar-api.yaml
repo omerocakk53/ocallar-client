@@ -1,0 +1,358 @@
+type: collection.insomnia.rest/5.0
+name: ocallar-collections
+meta:
+  id: wrk_e3753b25a36d491d9dffa1afdc313c15
+  created: 1763019495515
+  modified: 1763019495515
+  description: ""
+collection:
+  - name: ocallar-api
+    meta:
+      id: fld_152bec8b81574ec3836dd5a9055a32af
+      created: 1763019969254
+      modified: 1763133185459
+      sortKey: -1763019969254
+      description: ""
+    children:
+      - name: news
+        meta:
+          id: fld_0cdeaa54773846ea893a1e9b48e9e83e
+          created: 1763019508794
+          modified: 1763133221995
+          sortKey: -1763019972416
+          description: ""
+        children:
+          - url: "{{host}}/v1/news"
+            name: get-news
+            meta:
+              id: req_c3fcb866e8f64b24bfe7adb7a98b4034
+              created: 1763019524849
+              modified: 1763021667644
+              isPrivate: false
+              description: ""
+              sortKey: -1763019528914
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{host}}/v1/news"
+            name: create-news
+            meta:
+              id: req_4973780957e04eefbc4662097ffb32de
+              created: 1763019622340
+              modified: 1763021831680
+              isPrivate: false
+              description: ""
+              sortKey: -1763019529014
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"title": "Sedlam",
+                	"content":"hedllo",
+                	"author":"bildmem",
+                	"image":"yodk"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{host}}/v1/news/69159138ddaf815824e78f4e"
+            name: get-news-id
+            meta:
+              id: req_49137be397164da481770b1f8cd6ad77
+              created: 1763021151935
+              modified: 1763021656456
+              isPrivate: false
+              description: ""
+              sortKey: -1763019529114
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{host}}/v1/news/69159138ddaf815824e78f4e"
+            name: edit-news
+            meta:
+              id: req_1df64417980d4ee7a00a4c916e7577d8
+              created: 1763021630034
+              modified: 1763021737441
+              isPrivate: false
+              description: ""
+              sortKey: -1763019529214
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: |2-
+                 {
+                	 "title":"mükemmel"
+                 }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{host}}/v1/news/69159138ddaf815824e78f4e"
+            name: delete-news
+            meta:
+              id: req_0a9b2ac04e424e1a9d71fff4b93ae5ea
+              created: 1763021780503
+              modified: 1763021806391
+              isPrivate: false
+              description: ""
+              sortKey: -1763019529314
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: auth
+        meta:
+          id: fld_ade98858b66043fb83b100bdda1cce0a
+          created: 1763020732616
+          modified: 1763131436228
+          sortKey: -1763019972516
+          description: ""
+        children:
+          - url: "{{host}}/v1/auth/login"
+            name: login
+            meta:
+              id: req_cc75acd195ab46bfb5bc304ab128bc27
+              created: 1763020738580
+              modified: 1763021095809
+              isPrivate: false
+              description: ""
+              sortKey: -1763020741569
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "mail@address.com",
+                	"password": "my_password_1s_5trong"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.0.0
+            scripts:
+              afterResponse: |-
+                const myFolder = insomnia.parentFolders.get('ocallar-api');
+                if (myFolder === undefined) {
+                	throw Error('odanet-api not found');
+                }
+
+                const jsonBody = insomnia.response.json();
+                const accessToken = jsonBody.tokens.access.token
+                const refreshToken = jsonBody.tokens.refresh.token
+
+                myFolder.environment.set('access_token', accessToken);
+                myFolder.environment.set('refresh_token', refreshToken);
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: human-resources
+        meta:
+          id: fld_8aa1991235ae46b8883b61343a61b202
+          created: 1763024825156
+          modified: 1763032554354
+          sortKey: -1763019972616
+          description: ""
+        children:
+          - url: "{{host}}/v1/human-resources"
+            name: get-human-resources
+            meta:
+              id: req_56eeac8389e8406c8997e49efaf113b2
+              created: 1763024865521
+              modified: 1763024954339
+              isPrivate: false
+              description: ""
+              sortKey: -1763024876495
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{host}}/v1/human-resources"
+            name: create-human-resources
+            meta:
+              id: req_ef173c302fdb4ba791ba4f358c825fbb
+              created: 1763025075357
+              modified: 1763032700638
+              isPrivate: false
+              description: ""
+              sortKey: -1763024876595
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name":"ömer",
+                	"email":"ömerawdad@gmail.com",
+                	"phoneNumber":"5303230367",
+                	"description":"selam dedim"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{host}}/v1/human-resources/6915bdbe29b55f4184b160c0"
+            name: delete-human-resources
+            meta:
+              id: req_b24ee2f1032d421da271a2e7a904f683
+              created: 1763032555374
+              modified: 1763032678229
+              isPrivate: false
+              description: ""
+              sortKey: -1763024876695
+            method: DELETE
+            parameters:
+              - id: pair_80782001c7514e139ff0fe8405d40cf0
+                name: ""
+                value: ""
+                description: ""
+                disabled: false
+            headers:
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: uploads
+        meta:
+          id: fld_107d5f9dab7d4f6cadc05cc2e2908c45
+          created: 1763133196655
+          modified: 1763133198641
+          sortKey: -1763019972816
+          description: ""
+        children:
+          - url: "{{host}}/v1/upload"
+            name: uploads
+            meta:
+              id: req_859a910fd57f4b72a25dfa9323c57050
+              created: 1763131345686
+              modified: 1763133213751
+              isPrivate: false
+              description: ""
+              sortKey: -1763133213736
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_f7e5acc67e0a4ca8b81acfe4251497fb
+                  name: file
+                  value: ""
+                  description: ""
+                  disabled: false
+                  type: file
+                  fileName: C:\Users\Ömer\Pictures\Screenshots\Ekran görüntüsü 2025-11-12
+                    150604.png
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+    authentication:
+      type: bearer
+      token: "{{access_token}}"
+      disabled: false
+    environment:
+      access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzYTc2YTAyMjIxZTFkMjA0N2RiMmMiLCJpYXQiOjE3NjMxMzE0MzYsImV4cCI6MTc2MzEzMzIzNiwidHlwZSI6ImFjY2VzcyJ9.lCNdVMyA_1F1o61ufbrCdVRADno42HNbxg-0jzUXda4
+      host: http://localhost:3000
+      refresh_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzYTc2YTAyMjIxZTFkMjA0N2RiMmMiLCJpYXQiOjE3NjMxMzE0MzYsImV4cCI6MTc2NTcyMzQzNiwidHlwZSI6InJlZnJlc2gifQ.R-dpFyMpScNHFvG07uWktfpEGXPhfLqQ6XjKM2r1kcs
+    environmentPropertyOrder:
+      "&":
+        - access_token
+        - host
+        - refresh_token
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_8dd886125ef6a7bc1e299de39381e13b1dcd4306
+    created: 1763019495518
+    modified: 1763131436224
+environments:
+  name: Base Environment
+  meta:
+    id: env_8dd886125ef6a7bc1e299de39381e13b1dcd4306
+    created: 1763019495516
+    modified: 1763131436227
+    isPrivate: false
+  data:
+    access_token: variable_value
+    variable_name: variable_value
