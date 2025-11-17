@@ -4,21 +4,21 @@ import './index.css'
 const newsData = [
   {
     id: 1,
-    img: 'http://localhost:3000/uploads//images/news/news-1.jpg',
+    img: '/uploads//images/news/news-1.jpg',
     title: 'Haber 1',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita esse ipsum rerum alias dolorem dolore excepturi dolores itaque tempora temporibus odio incidunt deserunt perferendis tempore, nobis nesciunt quod! Dolorum.',
   },
   {
     id: 2,
-    img: 'http://localhost:3000/uploads//images/news/news-1.jpg',
+    img: '/uploads//images/news/news-1.jpg',
     title: 'Haber 2',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita esse ipsum rerum alias dolorem dolore excepturi dolores itaque tempora temporibus odio incidunt deserunt perferendis tempore, nobis nesciunt quod! Dolorum.',
   },
   {
     id: 3,
-    img: 'http://localhost:3000/uploads//images/news/news-1.jpg',
+    img: '/uploads//images/news/news-1.jpg',
     title: 'Haber 3',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita esse ipsum rerum alias dolorem dolore excepturi dolores itaque tempora temporibus odio incidunt deserunt perferendis tempore, nobis nesciunt quod! Dolorum.',

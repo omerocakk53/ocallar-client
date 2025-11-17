@@ -7,7 +7,7 @@ const Testimonial = () => {
     <section
       className="testimonial-section"
       style={{
-        backgroundImage: 'url(http://localhost:3000/uploads/images/background/testimonial-bg.jpg)',
+        backgroundImage: 'url(/uploads/images/background/testimonial-bg.jpg)',
       }}
     >
       <div className="auto-container">

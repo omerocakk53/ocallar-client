@@ -1,7 +1,7 @@
 const slideData = [
   {
     id: 1,
-    imageUrl: 'http://localhost:3000/uploads/images/banner/banner-1.jpg',
+    imageUrl: '/uploads/images/banner/banner-1.jpg',
     contentClass: 'content-box',
     subtitle: 'Öcallar Petrol',
     title: '43 Yıllık Tecrübe ve Deneyimle Yolumuza Devam Ediyoruz',
@@ -15,7 +15,7 @@ const slideData = [
   },
   {
     id: 2,
-    imageUrl: 'http://localhost:3000/uploads/images/banner/banner-2.jpg',
+    imageUrl: '/uploads/images/banner/banner-2.jpg',
     contentClass: 'content-box centred',
     subtitleList: [{ href: 'index.html', text: 'Öcallar Petrol' }],
     title: 'Slider <br> Alanı 2',
@@ -29,7 +29,7 @@ const slideData = [
   },
   {
     id: 3,
-    imageUrl: 'http://localhost:3000/uploads/images/banner/banner-3.jpg',
+    imageUrl: '/uploads/images/banner/banner-3.jpg',
     contentClass: 'content-box',
     subtitle: 'Öcallar Petrol',
     title: 'Slider <br> Alanı 3',

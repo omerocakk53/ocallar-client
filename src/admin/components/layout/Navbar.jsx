@@ -60,7 +60,7 @@ const Navbar = () => {
               <SheetTitle>
                 <Link to="/admin">
                   <img
-                    src="http://localhost:3000/uploads/images/ocallar.png"
+                    src="/uploads/images/ocallar.png"
                     alt="Logo"
                     className="object-cover w-50 h-16 -mx-4 p-2"
                   />
@@ -134,7 +134,7 @@ const Navbar = () => {
 
         <Link to="/admin">
           <img
-            src="http://localhost:3000/uploads/images/ocallar.png"
+            src="/uploads/images/ocallar.png"
             alt="Logo"
             className="object-cover w-50 h-16 -mx-2 p-2"
           />

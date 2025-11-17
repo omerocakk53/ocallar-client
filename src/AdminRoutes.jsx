@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 const AdminLayout = lazy(() => import('@/admin/components/layout/AdminLayout'))
 const Dashboard = lazy(() => import('@/admin/pages/dashboard/index'))
 const News = lazy(() => import('@/admin/pages/News/index'))
+const Social = lazy(() => import('@/admin/pages/web-management/social/index'))
 
 const useAdminRoutes = () => {
   return (
@@ -30,7 +31,7 @@ const useAdminRoutes = () => {
         />
         <Route
           path="social"
-          element={<>social</>}
+          element={<Social />}
         />
         <Route
           path="content/slider"

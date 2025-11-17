@@ -2,7 +2,7 @@ import axios from 'axios'
 import { store } from '@/store'
 import { loginSuccess, logout } from '@/store/authSlice'
 
-const API_BASE_URL = 'http://localhost:3000/v1/'
+const API_BASE_URL = '/v1'
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,

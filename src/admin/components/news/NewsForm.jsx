@@ -1,5 +1,3 @@
-// src/admin/components/news/NewsForm.jsx
-
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { Input } from '@/admin/components/ui/input'

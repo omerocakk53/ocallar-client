@@ -64,7 +64,7 @@ const MobileMenu = ({ onClose }) => {
         <div className="nav-logo">
           <a href="index.html">
             <img
-              src="http://localhost:3000/uploads/images/logo.png"
+              src="/uploads/images/logo.png"
               alt="Mobil Logo"
               title=""
             />

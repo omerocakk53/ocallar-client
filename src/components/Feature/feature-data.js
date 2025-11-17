@@ -1,16 +1,16 @@
 const featureData = [
   {
-    image: 'http://localhost:3000/uploads/images/resource/feature-1.jpg',
+    image: '/uploads/images/resource/feature-1.jpg',
     title: 'Araba Parçalar',
     link: 'index.html',
   },
   {
-    image: 'http://localhost:3000/uploads/images/resource/feature-2.jpg',
+    image: '/uploads/images/resource/feature-2.jpg',
     title: 'Araba Motor Parçaları',
     link: 'index.html',
   },
   {
-    image: 'http://localhost:3000/uploads/images/resource/feature-3.jpg',
+    image: '/uploads/images/resource/feature-3.jpg',
     title: 'Araba Diğer Parçalar',
     link: 'index.html',
   },

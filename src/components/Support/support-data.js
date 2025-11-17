@@ -1,7 +1,7 @@
 const supportData = {
   worldCyber: {
     subtitle: 'Öcallar Petrol',
-    pattern: 'http://localhost:3000/uploads/images/shape/shape-2.png',
+    pattern: '/uploads/images/shape/shape-2.png',
   },
   supportSection: {
     titleBox: {
@@ -17,8 +17,8 @@ const supportData = {
     ],
     submitButton: { text: 'Mesajı Gönder', className: 'theme-btn style-one' },
     info: {
-      image: 'http://localhost:3000/uploads/images/resource/info-1.jpg',
-      logo: 'http://localhost:3000/uploads/images/icons/info-logo.png',
+      image: '/uploads/images/resource/info-1.jpg',
+      logo: '/uploads/images/icons/info-logo.png',
       phone: '0 555 555 55 55',
       email: 'iletisim@ocallarpetrol.com',
       company: 'Öcallar Petrol',

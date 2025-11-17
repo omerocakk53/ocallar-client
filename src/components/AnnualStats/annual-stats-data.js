@@ -15,8 +15,8 @@ const annualStatsData = {
     ],
   },
   image: {
-    src: 'http://localhost:3000/uploads/images/resource/state-1.jpg',
-    pattern: 'http://localhost:3000/uploads/images/shape/shape-1.png',
+    src: '/uploads/images/resource/state-1.jpg',
+    pattern: '/uploads/images/shape/shape-1.png',
   },
 }
 

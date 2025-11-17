@@ -5,7 +5,7 @@ const NewsListItem = ({ item, onEdit, onDelete }) => {
   return (
     <Card className="border shadow-sm">
       <img
-        src={'http://localhost:3000' + item.image}
+        src={'' + item.image}
         alt={item.title}
         className="w-full h-48 object-cover"
       />

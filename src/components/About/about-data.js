@@ -2,8 +2,8 @@
 
 const aboutData = {
   video: {
-    image: 'http://localhost:3000/uploads/images/resource/about-1.jpg',
-    buttonBg: 'http://localhost:3000/uploads/images/resource/btn-bg.png',
+    image: '/uploads/images/resource/about-1.jpg',
+    buttonBg: '/uploads/images/resource/btn-bg.png',
     videoUrl: '#', // ya da örnek: 'https://www.youtube.com/watch?v=abc123'
   },
   content: {

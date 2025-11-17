@@ -2,7 +2,13 @@ import { useState } from 'react'
 import { useNews } from '@/admin/hooks/useNews'
 import NewsForm from '@/admin/components/news/NewsForm'
 import NewsListItem from '@/admin/components/news/NewsListItem'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/admin/components/ui/dialog'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/admin/components/ui/dialog'
 import { Button } from '@/admin/components/ui/button'
 import LazyLoading from '@/components/LazyLoading'
 
@@ -69,6 +75,7 @@ const NewsPage = () => {
             onSubmit={handleSubmit}
             submitText={editItem ? 'Güncelle' : 'Ekle'}
           />
+          <DialogDescription>Tüm Alanlar Doldurulmalıdır.</DialogDescription>
         </DialogContent>
       </Dialog>
     </div>

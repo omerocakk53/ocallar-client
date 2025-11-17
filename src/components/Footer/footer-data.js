@@ -1,5 +1,5 @@
 const footerData = {
-  logo: 'http://localhost:3000/uploads/images/footer-logo.png',
+  logo: '/uploads/images/footer-logo.png',
   description: 'Öcallar Petrol',
   info: {
     address: 'İsmetpaşa Mah. Hışıroğlu Çay Cad. No:64 Devrek Zonguldak',

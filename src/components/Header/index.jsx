@@ -40,7 +40,7 @@ const Header = ({ ref, inView, onMobileNavClick }) => {
         <div className="auto-container">
           <div className="outer-box clearfix">
             <Logo
-              src="http://localhost:3000/uploads/images/logo.png"
+              src="/uploads/images/logo.png"
               alt="Ana Logo"
             />
             <div className="menu-area pull-right">
@@ -90,7 +90,7 @@ const Header = ({ ref, inView, onMobileNavClick }) => {
         <div className="auto-container">
           <div className="outer-box clearfix">
             <Logo
-              src="http://localhost:3000/uploads/images/small-logo.png"
+              src="/uploads/images/small-logo.png"
               alt="Sticky Logo"
             />
             <div className="menu-area pull-right">

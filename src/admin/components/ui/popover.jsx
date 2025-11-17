@@ -1,27 +1,26 @@
-import * as React from 'react'
-import * as PopoverPrimitive from '@radix-ui/react-popover'
+import * as React from "react"
+import * as PopoverPrimitive from "@radix-ui/react-popover"
 
-import { cn } from '@/admin/lib/utils'
+import { cn } from "@/admin/lib/utils"
 
-function Popover({ ...props }) {
-  return (
-    <PopoverPrimitive.Root
-      data-slot="popover"
-      {...props}
-    />
-  )
+function Popover({
+  ...props
+}) {
+  return <PopoverPrimitive.Root data-slot="popover" {...props} />;
 }
 
-function PopoverTrigger({ ...props }) {
-  return (
-    <PopoverPrimitive.Trigger
-      data-slot="popover-trigger"
-      {...props}
-    />
-  )
+function PopoverTrigger({
+  ...props
+}) {
+  return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />;
 }
 
-function PopoverContent({ className, align = 'center', sideOffset = 4, ...props }) {
+function PopoverContent({
+  className,
+  align = "center",
+  sideOffset = 4,
+  ...props
+}) {
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
@@ -29,22 +28,18 @@ function PopoverContent({ className, align = 'center', sideOffset = 4, ...props 
         align={align}
         sideOffset={sideOffset}
         className={cn(
-          'bg-white text-neutral-950 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-72 origin-(--radix-popover-content-transform-origin) rounded-md border border-neutral-200 p-4 shadow-md outline-hidden dark:bg-neutral-950 dark:text-neutral-50 dark:border-neutral-800',
-          className,
+          "oc:bg-popover oc:text-popover-foreground oc:data-[state=open]:animate-in oc:data-[state=closed]:animate-out oc:data-[state=closed]:fade-out-0 oc:data-[state=open]:fade-in-0 oc:data-[state=closed]:zoom-out-95 oc:data-[state=open]:zoom-in-95 oc:data-[side=bottom]:slide-in-from-top-2 oc:data-[side=left]:slide-in-from-right-2 oc:data-[side=right]:slide-in-from-left-2 oc:data-[side=top]:slide-in-from-bottom-2 oc:z-50 oc:w-72 oc:origin-(--radix-popover-content-transform-origin) oc:rounded-md oc:border oc:p-4 oc:shadow-md oc:outline-hidden",
+          className
         )}
-        {...props}
-      />
+        {...props} />
     </PopoverPrimitive.Portal>
-  )
+  );
 }
 
-function PopoverAnchor({ ...props }) {
-  return (
-    <PopoverPrimitive.Anchor
-      data-slot="popover-anchor"
-      {...props}
-    />
-  )
+function PopoverAnchor({
+  ...props
+}) {
+  return <PopoverPrimitive.Anchor data-slot="popover-anchor" {...props} />;
 }
 
 export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor }

@@ -62,7 +62,7 @@ const FormikImageInput = ({ label, ...props }) => {
         {preview ? (
           <div className="relative">
             <img
-              src={'http://localhost:3000' + preview}
+              src={preview}
               alt="Preview"
               className="h-20 w-20 object-cover rounded border"
             />

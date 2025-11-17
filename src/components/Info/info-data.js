@@ -1,6 +1,6 @@
 const infoData = {
   yearBox: {
-    image: 'http://localhost:3000/uploads/images/icons/year-icon.png',
+    image: '/uploads/images/icons/year-icon.png',
     years: 43,
     companyName: 'Öcallar',
     title: 'Yıllık Tecrübe',
