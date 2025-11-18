@@ -12,4 +12,16 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  server: {
+    proxy: {
+      '/uploads': {
+        target: 'http://94.102.7.99',
+        changeOrigin: true,
+      },
+      '/v1': {
+        target: 'http://94.102.7.99',
+        changeOrigin: true,
+      },
+    },
+  },
 })
