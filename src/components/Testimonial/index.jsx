@@ -1,6 +1,6 @@
 import React from 'react'
-import { testimonialsData } from './testimonial-data'
 import TestimonialSlider from './TestimonialSlider'
+import { testimonialsData } from './testimonial-data'
 
 const Testimonial = () => {
   return (
@@ -21,6 +21,7 @@ const Testimonial = () => {
                 </h2>
               </div>
             </div>
+
             <div className="col-lg-6 col-md-12 col-sm-12 text-column">
               <div className="text">
                 <p>Müşteri yorumlarımızı aşağıdaki bölümden inceleyebilirsiniz</p>
@@ -28,9 +29,8 @@ const Testimonial = () => {
             </div>
           </div>
         </div>
-        <div className="testimonial-inner">
-          <TestimonialSlider testimonials={testimonialsData} />
-        </div>
+
+        <TestimonialSlider testimonials={testimonialsData} />
       </div>
     </section>
   )

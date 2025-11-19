@@ -2,24 +2,19 @@ import React from 'react'
 import ContactInfo from './ContactInfo'
 import SocialLink from '../SocialLink'
 import NavItem from './NavItem'
-const contactData = {
-  title: 'İletişim Bilgileri',
-  items: [
-    { text: 'Adres: Örnek Mah. Örnek Sk. No:12, İstanbul' },
-    { text: '+90 555 555 55 55', href: 'tel:+905555555555' },
-    { text: 'info@example.com', href: 'mailto:info@example.com' },
-  ],
-}
+import footerData from '../Footer/footer-data'
+import { useSocial } from '@/admin/hooks/web-management/useSocial'
+
 const mobileSocialLinks = [
-  { href: 'index.html', iconClass: 'fab fa-twitter' },
-  { href: 'index.html', iconClass: 'fab fa-facebook-square' },
-  { href: 'index.html', iconClass: 'fab fa-pinterest-p' },
-  { href: 'index.html', iconClass: 'fab fa-instagram' },
-  { href: 'index.html', iconClass: 'fab fa-youtube' },
+  { href: '#', iconClass: 'fab fa-twitter' },
+  { href: '#', iconClass: 'fab fa-facebook-square' },
+  { href: '#', iconClass: 'fab fa-pinterest-p' },
+  { href: '#', iconClass: 'fab fa-instagram' },
+  { href: '#', iconClass: 'fab fa-youtube' },
 ]
 const navItems = [
   {
-    href: 'index.html',
+    href: '#',
     label: 'Ana Sayfa',
   },
   {
@@ -27,7 +22,7 @@ const navItems = [
     label: 'Ürünlerimiz',
   },
   {
-    href: 'index.html',
+    href: '#',
     label: 'Dağıtım Merkezleri',
     subItems: [
       { href: '#', label: 'Devrek Dağıtım Merkezi' },
@@ -39,7 +34,7 @@ const navItems = [
     label: 'Tedarikçilerimiz',
   },
   {
-    href: 'index.html',
+    href: '#',
     label: 'Kurumsal',
     subItems: [
       { href: '#', label: 'İnsan Kaynakları' },
@@ -50,6 +45,8 @@ const navItems = [
 ]
 
 const MobileMenu = ({ onClose }) => {
+  const { social } = useSocial()
+  const { info } = footerData
   return (
     <div className="mobile-menu">
       <div className="menu-backdrop"></div>
@@ -62,7 +59,7 @@ const MobileMenu = ({ onClose }) => {
 
       <nav className="menu-box">
         <div className="nav-logo">
-          <a href="index.html">
+          <a href="#">
             <img
               src="/uploads/images/logo.png"
               alt="Mobil Logo"
@@ -84,17 +81,17 @@ const MobileMenu = ({ onClose }) => {
             </ul>
           </div>
         </div>
-        <ContactInfo
-          title={contactData.title}
-          items={contactData.items}
-        />
-        <div className="social-links">
+        <ContactInfo info={info} />
+        <div
+          className="social-links"
+          style={{ padding: '0' }}
+        >
           <ul className="clearfix">
-            {mobileSocialLinks.map((link, index) => (
+            {social.map((item, index) => (
               <SocialLink
                 key={index}
-                href={link.href}
-                iconClass={link.iconClass}
+                href={item.socialLink}
+                icon={item.socialIcon}
               />
             ))}
           </ul>

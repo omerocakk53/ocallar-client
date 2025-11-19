@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 import { single } from '@/services/uploadService'
-import { get, create, update, remove } from '../services/newsService'
+import { get, getOne, create, update, remove } from '../services/newsService'
 
 const extractData = (res) => res?.data || res?.news || (Array.isArray(res) ? res : [])
 
@@ -22,7 +22,7 @@ const preparePayload = async (formData) => {
   }
 }
 
-export const useNews = () => {
+export const useNews = (id) => {
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -41,8 +41,27 @@ export const useNews = () => {
   }, [])
 
   useEffect(() => {
-    fetchNews()
-  }, [fetchNews])
+    if (!id) fetchNews()
+  }, [id, fetchNews])
+
+  const fetchOneNews = useCallback(async (id) => {
+    setLoading(true)
+    setError(null)
+    try {
+      const result = await getOne(id)
+      setNews(extractData(result))
+    } catch (err) {
+      setError(err)
+    } finally {
+      setLoading(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (id) {
+      fetchOneNews(id)
+    }
+  }, [id, fetchOneNews])
 
   const addNews = async (formData) => {
     const payload = await preparePayload(formData)

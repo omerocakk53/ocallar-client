@@ -1,7 +1,10 @@
+import { useSocial } from '@/admin/hooks/web-management/useSocial'
 import footerData from './footer-data'
+import SocialLink from '../SocialLink'
 
 const Footer = () => {
   const { logo, description, info, socialLinks, linkSections, copyright } = footerData
+  const { social } = useSocial()
 
   return (
     <footer className="main-footer">
@@ -32,18 +35,22 @@ const Footer = () => {
                       E-Posta <a href={`mailto:${info.email}`}>{info.email}</a>
                     </li>
                     <li>
-                      <i className="fas fa-headphones"></i>
+                      <i className="fas fa-phone"></i>
                       Telefon <a href={`tel:${info.phone}`}>{info.phone}</a>
+                    </li>
+                    <li>
+                      <i className="fas fa-fax"></i>
+                      Faks <a href={`tel:${info.faks}`}>{info.faks}</a>
                     </li>
                   </ul>
 
                   <ul className="social-links clearfix">
-                    {socialLinks.map((social, index) => (
-                      <li key={index}>
-                        <a href={social.link}>
-                          <i className={social.icon}></i>
-                        </a>
-                      </li>
+                    {social.map((item, index) => (
+                      <SocialLink
+                        key={index}
+                        href={item.socialLink}
+                        icon={item.socialIcon}
+                      />
                     ))}
                   </ul>
                 </div>

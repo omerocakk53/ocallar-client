@@ -9,7 +9,7 @@ const infoData = {
     content: `Hakkımızda yazısı gelicek. Hakkımızda yazısı gelicek. Hakkımızda yazısı gelicek.
               Hakkımızda yazısı gelicek. Hakkımızda yazısı gelicek. Hakkımızda yazısı gelicek.
               Hakkımızda yazısı gelicek. Hakkımızda yazısı gelicek.`,
-    link: 'index.html',
+    link: '#',
     linkText: 'Hakkımızda',
   },
 }

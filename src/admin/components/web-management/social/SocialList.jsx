@@ -81,7 +81,7 @@ export function SocialList({ data, onEdit, onDelete }) {
                 colSpan={4}
                 className="text-center py-10 text-muted-foreground"
               >
-                Henüz eklenmiş bir sosyal medya hesabı yok.
+                Henüz eklenmiş bir link yok.
               </TableCell>
             </TableRow>
           )}

@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import { useSocial } from '@/admin/hooks/web-management/useSocial' // Hook ismini düzelttik
-import { Card, CardContent, CardHeader, CardTitle } from '@/admin/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/admin/components/ui/card'
 import { Button } from '@/admin/components/ui/button'
 import {
   AlertDialog,
@@ -76,7 +82,7 @@ export default function SocialManagementPage() {
     <div className="p-6 space-y-6">
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-2xl font-bold">Sosyal Medya Yönetimi</CardTitle>
+          <CardTitle className="text-2xl font-bold">Link Yönetimi</CardTitle>
           <Button
             onClick={handleOpenAdd}
             className="gap-2"

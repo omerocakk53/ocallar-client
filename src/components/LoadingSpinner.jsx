@@ -22,7 +22,7 @@ const LoadingSpinner = ({ loadingCompleted }) => {
         opacity: fadeOut ? 0 : 1,
       }}
     >
-      <div className="preloader">
+      <div className="preloader style-two">
         <div
           className="preloader-close"
           onClick={() => setRemove(true)}

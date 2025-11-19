@@ -1,13 +1,13 @@
 const slideData = [
   {
     id: 1,
-    imageUrl: '/uploads/images/banner/banner-1.jpg',
+    imageUrl: '/uploads/images/banner/banner-1.png',
     contentClass: 'content-box',
     subtitle: 'Öcallar Petrol',
     title: '43 Yıllık Tecrübe ve Deneyimle Yolumuza Devam Ediyoruz',
     buttons: [
       {
-        href: 'index.html',
+        href: '#',
         text: 'Hakkımızda',
         className: 'theme-btn style-one',
       },
@@ -15,33 +15,33 @@ const slideData = [
   },
   {
     id: 2,
-    imageUrl: '/uploads/images/banner/banner-2.jpg',
+    imageUrl: '/uploads/images/banner/banner-2.png',
     contentClass: 'content-box centred',
-    subtitleList: [{ href: 'index.html', text: 'Öcallar Petrol' }],
-    title: 'Slider <br> Alanı 2',
+    subtitleList: [{ href: '#', text: 'Öcallar Petrol' }],
+    title: 'Yedek Parça',
     buttons: [
       {
-        href: 'index.html',
-        text: 'Buton 2',
+        href: '#',
+        text: 'Bilgi Al',
         className: 'theme-btn style-one mar-0',
       },
     ],
   },
   {
     id: 3,
-    imageUrl: '/uploads/images/banner/banner-3.jpg',
+    imageUrl: '/uploads/images/banner/banner-3.png',
     contentClass: 'content-box',
     subtitle: 'Öcallar Petrol',
-    title: 'Slider <br> Alanı 3',
+    title: 'Castrol <br> Türkiye',
     buttons: [
+      // {
+      //   href: '#',
+      //   text: 'Buton 3',
+      //   className: 'theme-btn style-one mr-10',
+      // },
       {
-        href: 'index.html',
-        text: 'Buton 3',
-        className: 'theme-btn style-one mr-10',
-      },
-      {
-        href: 'index.html',
-        text: 'Buton 4',
+        href: '#',
+        text: 'Tanıtım',
         className: 'banner-btn-two',
       },
     ],

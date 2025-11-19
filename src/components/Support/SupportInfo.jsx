@@ -1,10 +1,15 @@
 import React from 'react'
+import footerData from '../Footer/footer-data'
 
-const SupportInfo = ({ image, logo, phone, email, links }) => {
+const SupportInfo = ({ image, logo, links }) => {
+  const { info } = footerData
   return (
     <div className="info-inner">
       <figure className="image-box">
         <img
+          style={{
+            filter: 'grayscale(1)',
+          }}
           src={image}
           alt="Info"
         />
@@ -20,10 +25,10 @@ const SupportInfo = ({ image, logo, phone, email, links }) => {
           <i className="fas fa-phone"></i>
         </div>
         <h2>
-          <a href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a>
+          <a href={`tel:${info.phone}`}>{info.phone}</a>
         </h2>
         <div className="email">
-          <a href={`mailto:${email}`}>{email}</a>
+          <a href={`mailto:${info.email}`}>{info.email}</a>
         </div>
         <ul className="list-item clearfix">
           {links.map((link, index) => (

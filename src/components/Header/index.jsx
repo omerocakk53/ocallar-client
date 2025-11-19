@@ -2,9 +2,13 @@ import React from 'react'
 import Logo from './Logo'
 import SocialLink from '../SocialLink'
 import NavItem from './NavItem'
-import { navItems, socialLinks } from './header-data'
+import { navItems } from './header-data'
+import { useSocial } from '@/admin/hooks/web-management/useSocial'
+import footerData from '../Footer/footer-data'
 
 const Header = ({ ref, inView, onMobileNavClick }) => {
+  const { social } = useSocial()
+  const { info } = footerData
   return (
     <header
       ref={ref}
@@ -15,20 +19,29 @@ const Header = ({ ref, inView, onMobileNavClick }) => {
           <div className="top-inner clearfix">
             <ul className="info top-left pull-left">
               <li>
-                <i className="fas fa-map-marker-alt"></i>Adres
+                <i className="fas fa-map-marker-alt"></i>
+                {info.address}
               </li>
               <li>
-                <i className="fas fa-headphones"></i>Telefon{' '}
-                <a href="tel:905555555555">0 555 555 55 55</a>
+                <i className="fas fa-envelope"></i>
+                E-Posta <a href={`mailto:${info.email}`}>{info.email}</a>
+              </li>
+              <li>
+                <i className="fas fa-phone"></i>
+                Telefon <a href={`tel:${info.phone}`}>{info.phone}</a>
+              </li>
+              <li>
+                <i className="fas fa-fax"></i>
+                Faks <a href={`tel:${info.faks}`}>{info.faks}</a>
               </li>
             </ul>
             <div className="top-right pull-right">
               <ul className="social-links clearfix">
-                {socialLinks.map((link, index) => (
+                {social.map((item, index) => (
                   <SocialLink
                     key={index}
-                    href={link.href}
-                    iconClass={link.iconClass}
+                    href={item.socialLink}
+                    icon={item.socialIcon}
                   />
                 ))}
               </ul>
@@ -70,12 +83,9 @@ const Header = ({ ref, inView, onMobileNavClick }) => {
                 </div>
               </nav>
               <div className="menu-right-content clearfix">
-                <div className="nav-btn nav-toggler navSidebar-button clearfix">
-                  <i className="fas fa-align-right"></i>
-                </div>
                 <div className="btn-box">
                   <a
-                    href="index.html"
+                    href="#"
                     className="theme-btn style-one"
                   >
                     TEKLİF AL
@@ -90,7 +100,7 @@ const Header = ({ ref, inView, onMobileNavClick }) => {
         <div className="auto-container">
           <div className="outer-box clearfix">
             <Logo
-              src="/uploads/images/small-logo.png"
+              src="/uploads/images/logo.png"
               alt="Sticky Logo"
             />
             <div className="menu-area pull-right">

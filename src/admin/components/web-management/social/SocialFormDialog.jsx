@@ -46,8 +46,8 @@ export function SocialFormDialog({ open, onOpenChange, onSubmit, initialData, is
     >
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>{initialData ? 'Hesabı Düzenle' : 'Yeni Hesap Ekle'}</DialogTitle>
-          <DialogDescription>Sosyal medya bilgilerini giriniz.</DialogDescription>
+          <DialogTitle>{initialData ? 'Düzenle' : 'Yeni Ekle'}</DialogTitle>
+          <DialogDescription>bilgilerini giriniz.</DialogDescription>
         </DialogHeader>
         <form
           onSubmit={handleSubmit}
@@ -65,7 +65,7 @@ export function SocialFormDialog({ open, onOpenChange, onSubmit, initialData, is
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="socialLink">Profil Linki</Label>
+            <Label htmlFor="socialLink">Link</Label>
             <Input
               id="socialLink"
               placeholder="https://instagram.com/..."

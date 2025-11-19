@@ -1,7 +1,7 @@
 import NewsItem from './NewsItem'
-import newsData from './news-data'
-
+import { useNews } from '@/admin/hooks/useNews'
 const News = () => {
+  const { news } = useNews()
   return (
     <section className="news-section bg-color-1">
       <div className="auto-container">
@@ -11,9 +11,9 @@ const News = () => {
         </div>
 
         <div className="row clearfix">
-          {newsData.map((item) => (
+          {news.map((item) => (
             <NewsItem
-              key={item.id}
+              key={item._id}
               item={item}
             />
           ))}

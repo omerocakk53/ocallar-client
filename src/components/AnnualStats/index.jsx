@@ -1,6 +1,6 @@
 import React from 'react'
 import annualStatsData from './annual-stats-data'
-import ProgressBox from './ProgressBox'
+import StatBox from './StatBox' // İsmi değiştirdik
 import AnnualStatsImage from './AnnualStatsImage'
 
 const AnnualStats = () => {
@@ -10,6 +10,7 @@ const AnnualStats = () => {
     <section className="annual-stats">
       <div className="auto-container">
         <div className="row clearfix">
+          {/* Sol Taraf: Metin ve İstatistik Kutuları */}
           <div className="col-lg-6 col-md-12 col-sm-12 content-column">
             <div id="content_block_two">
               <div className="content-box">
@@ -20,9 +21,14 @@ const AnnualStats = () => {
                 <div className="text">
                   <p>{content.text}</p>
                 </div>
-                <div className="inner-box clearfix">
-                  {content.progressBoxes.map((box, index) => (
-                    <ProgressBox
+
+                {/* İstatistik Kutuları Alanı */}
+                <div
+                  className="inner-box clearfix"
+                  style={{ display: 'flex', flexWrap: 'wrap', marginTop: '30px' }}
+                >
+                  {content.stats.map((box, index) => (
+                    <StatBox
                       key={index}
                       {...box}
                     />
@@ -31,6 +37,8 @@ const AnnualStats = () => {
               </div>
             </div>
           </div>
+
+          {/* Sağ Taraf: Büyük Görsel */}
           <div className="col-lg-6 col-md-12 col-sm-12 image-column">
             <AnnualStatsImage
               src={image.src}

@@ -1,6 +1,7 @@
 import { Users } from 'lucide-react'
 import { CircleFadingPlus } from 'lucide-react'
 import { Contact } from 'lucide-react'
+import { Link } from 'lucide-react'
 import { SquareUserRound } from 'lucide-react'
 import { Sliders } from 'lucide-react'
 import { Settings2Icon } from 'lucide-react'
@@ -21,16 +22,17 @@ const adminNavigation = [
   {
     name: 'İletişim',
     icon: Contact,
-    children: [{ name: 'İletişim Listesi', to: 'contact', icon: List }],
+    children: [{ name: 'İletişim Listesi', to: 'contact-list', icon: List }],
   },
   {
-    name: 'Site yönetimi',
+    name: 'Site Yönetimi',
     icon: Settings2Icon,
     children: [
-      { name: 'Sosyal Medya yönetimi', to: 'social', icon: Sliders },
-      { name: 'Slider İçerik yönetimi', to: 'content/slider', icon: Sliders },
-      { name: 'Navbar İçerik yönetimi', to: 'content/navbar', icon: Sliders },
-      { name: 'Footer İçerik yönetimi', to: 'content/footer', icon: Sliders },
+      { name: 'İletişim Bilgileri', to: 'contact', icon: Contact },
+      { name: 'Link Yönetimi', to: 'social', icon: Link },
+      { name: 'Slider İçerik Yönetimi', to: 'content/slider', icon: Sliders },
+      { name: 'Navbar İçerik Yönetimi', to: 'content/navbar', icon: Sliders },
+      { name: 'Footer İçerik Yönetimi', to: 'content/footer', icon: Sliders },
     ],
   },
   {

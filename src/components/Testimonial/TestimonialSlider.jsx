@@ -1,70 +1,75 @@
-import { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Controller } from 'swiper/modules'
+import { Autoplay, Thumbs } from 'swiper/modules'
+
 import 'swiper/css'
+import 'swiper/css/thumbs'
+
 import TestimonialItem from './TestimonialItem'
 
 const TestimonialSlider = ({ testimonials }) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const textSwiperRef = useRef(null)
-  const thumbSwiperRef = useRef(null)
 
   return (
-    <>
+    <div className="testimonial-inner">
       <Swiper
-        modules={[Controller]}
-        onSwiper={(swiper) => (textSwiperRef.current = swiper)}
-        controller={{ control: thumbSwiperRef.current }}
+        modules={[Autoplay, Thumbs]}
         loop={true}
-        centeredSlides={true}
-        spaceBetween={0}
-        slidesPerView={1}
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        rewind={false}
+        loopAdditionalSlides={testimonials.length}
+        loopedSlides={testimonials.length}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        thumbs={{
+          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+        }}
+        onSlideChange={(swiper) => {
+          const index = swiper.realIndex
+          setActiveIndex(index)
+          if (thumbsSwiper) {
+            thumbsSwiper.slideTo(index)
+          }
+        }}
         className="client-testimonial-carousel"
       >
-        {testimonials.map((testimonial, index) => (
-          <SwiperSlide key={testimonial.id}>
+        {testimonials.map((item, index) => (
+          <SwiperSlide key={item.id}>
             <div className={`testimonial-block ${index === activeIndex ? 'active' : ''}`}>
               <div className="text">
-                <p>{testimonial.text}</p>
+                <p>{item.text}</p>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
       <Swiper
-        modules={[Autoplay, Controller]}
-        onSwiper={(swiper) => (thumbSwiperRef.current = swiper)}
-        controller={{ control: textSwiperRef.current }}
+        modules={[Thumbs]}
+        onSwiper={setThumbsSwiper}
         loop={true}
-        centeredSlides={true}
-        spaceBetween={5}
+        rewind={false}
+        loopAdditionalSlides={testimonials.length}
+        loopedSlides={testimonials.length}
         slidesPerView={5}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        breakpoints={5}
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        centeredSlides={true}
+        slideToClickedSlide={true}
+        watchSlidesProgress={true}
         className="client-thumb-outer"
       >
-        {testimonials.map((testimonial, index) => (
-          <SwiperSlide key={testimonial.id}>
-            <div
-              onClick={() => {
-                textSwiperRef.current.slideToLoop(index)
-                thumbSwiperRef.current.slideToLoop(index)
-              }}
-            >
+        {testimonials.map((item, index) => (
+          <SwiperSlide key={item.id}>
+            <div className="client-thumbs-carousel owl-carousel owl-theme owl-nav-none owl-dots-none owl-loaded owl-drag">
               <TestimonialItem
-                isOpen={activeIndex === index}
-                testimonial={testimonial}
+                isOpen={index == activeIndex}
+                testimonial={item}
               />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   )
 }
 

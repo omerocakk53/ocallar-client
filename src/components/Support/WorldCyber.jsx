@@ -5,7 +5,10 @@ const WorldCyber = ({ subtitle, pattern }) => {
     <section className="world-cyber bg-color-1">
       <div
         className="pattern-layer"
-        style={{ backgroundImage: `url(${pattern})` }}
+        style={{
+          backgroundImage: `url(${pattern})`,
+          backgroundSize: 'contain',
+        }}
       ></div>
       <div className="auto-container">
         <div className="sec-title centred">

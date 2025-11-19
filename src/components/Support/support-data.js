@@ -19,10 +19,8 @@ const supportData = {
     info: {
       image: '/uploads/images/resource/info-1.jpg',
       logo: '/uploads/images/icons/info-logo.png',
-      phone: '0 555 555 55 55',
-      email: 'iletisim@ocallarpetrol.com',
       company: 'Öcallar Petrol',
-      links: [{ text: 'Öcallar Petrol', href: 'index.html' }],
+      links: [{ text: 'Öcallar Petrol', href: '#' }],
     },
   },
 }

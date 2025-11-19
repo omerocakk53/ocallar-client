@@ -1,10 +1,11 @@
 const footerData = {
-  logo: '/uploads/images/footer-logo.png',
+  logo: '/uploads/images/logo.png',
   description: 'Öcallar Petrol',
   info: {
     address: 'İsmetpaşa Mah. Hışıroğlu Çay Cad. No:64 Devrek Zonguldak',
-    email: 'iletisim@ocallarpetrol.com',
-    phone: '0 555 555 55 55',
+    email: 'bilgi@ocallarpetrol.com.tr',
+    phone: '0 372 556 29 27',
+    faks: '0372 556 38 86',
   },
   socialLinks: [
     { icon: 'fab fa-twitter', link: '/' },

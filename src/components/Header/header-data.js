@@ -1,16 +1,16 @@
 const socialLinks = [
-  { href: 'index.html', iconClass: 'fab fa-facebook-f' },
-  { href: 'index.html', iconClass: 'fab fa-google-plus-g' },
-  { href: 'index.html', iconClass: 'fab fa-twitter' },
-  { href: 'index.html', iconClass: 'fab fa-linkedin-in' },
-  { href: 'index.html', iconClass: 'fab fa-instagram' },
+  { href: '#', iconClass: 'fab fa-facebook-f' },
+  { href: '#', iconClass: 'fab fa-google-plus-g' },
+  { href: '#', iconClass: 'fab fa-twitter' },
+  { href: '#', iconClass: 'fab fa-linkedin-in' },
+  { href: '#', iconClass: 'fab fa-instagram' },
 ]
 
 const navItems = [
-  { href: 'index.html', label: 'Ana Sayfa' },
+  { href: '#', label: 'Ana Sayfa' },
   { href: '#', label: 'Ürünlerimiz' },
   {
-    href: 'index.html',
+    href: '#',
     label: 'Dağıtım Merkezleri',
     subItems: [
       { href: '#', label: 'Devrek Dağıtım Merkezi' },
@@ -19,7 +19,7 @@ const navItems = [
   },
   { href: '#', label: 'Tedarikçilerimiz' },
   {
-    href: 'index.html',
+    href: '#',
     label: 'Kurumsal',
     subItems: [
       { href: '#', label: 'İnsan Kaynakları' },

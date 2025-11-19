@@ -32,7 +32,7 @@ const Home = () => {
       </Helmet>
       <LoadingSpinner loadingCompleted={true} />
       <Info />
-      <Feature />
+      {/* <Feature /> */}
       <About />
       <Service />
       <Project />
@@ -40,7 +40,7 @@ const Home = () => {
       <Support />
       <Testimonial />
       <News />
-      <Clients />
+      {/* <Clients /> */}
       <CTA />
     </>
   )
