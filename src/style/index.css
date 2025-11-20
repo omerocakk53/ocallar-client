@@ -33,8 +33,11 @@
   --color-text-light: #676767;
 }
 
-
 /* Scrool gizleme */
 ::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  overflow-x: hidden;
 }

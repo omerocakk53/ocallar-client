@@ -15,7 +15,10 @@ const Header = ({ ref, inView, onMobileNavClick }) => {
       className={`main-header style-one ${inView ? '' : 'fixed-header'}`}
     >
       <div className="header-top">
-        <div className="auto-container">
+        <div
+          className="auto-container"
+          style={{ maxWidth: 'none' }}
+        >
           <div className="top-inner clearfix">
             <ul className="info top-left pull-left">
               <li>

@@ -3,7 +3,6 @@
 const aboutData = {
   video: {
     image: '/uploads/images/resource/bg-video.jpg',
-    buttonBg: '/uploads/images/resource/btn-bg.png',
     videoUrl: 'https://www.youtube.com/watch?v=Ycjvu86MAg8',
   },
   content: {

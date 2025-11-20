@@ -24,7 +24,7 @@ const StatBox = ({ color, value, title, icon }) => {
         <div
           className="count-outer"
           style={{
-            fontSize: '36px',
+            fontSize: '140%',
             fontWeight: '800',
             color: '#222',
             lineHeight: '1',

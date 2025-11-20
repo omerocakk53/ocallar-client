@@ -15,13 +15,13 @@ export default defineConfig({
   server: {
     proxy: {
       '/uploads': {
-        // target: 'https://yeni.ocallarotomotiv.com.tr/',
-        target: 'http://localhost:3000',
+        target: 'https://yeni.ocallarotomotiv.com.tr/',
+        // target: 'http://localhost:3000',
         changeOrigin: true,
       },
       '/v1': {
-        // target: 'https://yeni.ocallarotomotiv.com.tr/',
-        target: 'http://localhost:3000',
+        target: 'https://yeni.ocallarotomotiv.com.tr/',
+        // target: 'http://localhost:3000',
         changeOrigin: true,
       },
     },

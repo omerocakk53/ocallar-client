@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AboutVideo = ({ image, buttonBg, videoUrl }) => {
+const AboutVideo = ({ image, videoUrl }) => {
   return (
     <div className="video-inner">
       <figure className="image-box">
@@ -14,7 +14,6 @@ const AboutVideo = ({ image, buttonBg, videoUrl }) => {
           href={videoUrl}
           className="lightbox-image"
           data-caption=""
-          style={{ backgroundImage: `url(${buttonBg})` }}
         >
           <i className="fas fa-play"></i>
         </a>
