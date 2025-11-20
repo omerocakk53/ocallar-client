@@ -7,6 +7,26 @@ import projectData from './project-data'
 const Project = () => {
   return (
     <section className="project-section">
+      <div className="auto-container">
+        <div className="title-box">
+          <div className="row clearfix">
+            <div className="col-lg-6 col-md-12 col-sm-12 title-column">
+              <div className="sec-title right">
+                <h5>Öcallar Petrol</h5>
+                <h2>Markalarımız</h2>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-12 col-sm-12 text-column">
+              <div className="text">
+                <p>
+                  Öcallar Petrol ailesinin bir parçası olan tüm çözüm ortaklarımızı
+                  inceleyebilirsiniz.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Swiper
         modules={[Autoplay]}
         loop={true}

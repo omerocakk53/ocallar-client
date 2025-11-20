@@ -2,14 +2,14 @@ import React from 'react'
 
 const WorldCyber = ({ subtitle, pattern }) => {
   return (
-    <section className="world-cyber bg-color-1">
-      <div
+    <section className="world-cyber-off bg-color-1">
+      {/* <div
         className="pattern-layer"
         style={{
           backgroundImage: `url(${pattern})`,
           backgroundSize: 'contain',
         }}
-      ></div>
+      ></div> */}
       <div className="auto-container">
         <div className="sec-title centred">
           <h5>{subtitle}</h5>
