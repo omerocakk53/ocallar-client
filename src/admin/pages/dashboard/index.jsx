@@ -1,4 +1,5 @@
-import { Helmet } from 'react-helmet'
+import React from 'react'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import {
   Card,
   CardHeader,
@@ -15,21 +16,23 @@ import { ArrowRight, Settings, LineChart } from 'lucide-react'
 const Dashboard = () => {
   return (
     <>
-      <Helmet>
-        <title>{'Yönetim Paneli | Öcallar'}</title>
-        <meta
-          name="description"
-          content="Öcallar yönetim paneli"
-        />
-        <meta
-          property="og:title"
-          content="Yönetim Paneli"
-        />
-        <meta
-          property="og:description"
-          content="Öcallar yönetim paneli - Web site yönetimi"
-        />
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <title>{'Yönetim Paneli | Öcallar'}</title>
+          <meta
+            name="description"
+            content="Öcallar yönetim paneli"
+          />
+          <meta
+            property="og:title"
+            content="Yönetim Paneli"
+          />
+          <meta
+            property="og:description"
+            content="Öcallar yönetim paneli - Web site yönetimi"
+          />
+        </Helmet>
+      </HelmetProvider>
 
       <div className="flex flex-col gap-8 p-6">
         <Card className="border rounded-2xl shadow-sm">

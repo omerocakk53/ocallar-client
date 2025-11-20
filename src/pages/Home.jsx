@@ -1,3 +1,5 @@
+import React from 'react'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import About from '@/components/About'
 import AnnualStats from '@/components/AnnualStats'
 import Clients from '@/components/Clients'
@@ -10,26 +12,27 @@ import Project from '@/components/Project'
 import Service from '@/components/Service'
 import Support from '@/components/Support'
 import Testimonial from '@/components/Testimonial'
-import { Helmet } from 'react-helmet'
 
 const Home = () => {
   return (
     <>
-      <Helmet>
-        <title>{'Ana Sayfa | Öcallar'}</title>
-        <meta
-          name="description"
-          content="Öcallar ana sayfası - Son haberler, duyurular ve hızlı erişim"
-        />
-        <meta
-          property="og:title"
-          content="Ana Sayfa"
-        />
-        <meta
-          property="og:description"
-          content="Öcallar ana sayfası - Son haberler, duyurular ve hızlı erişim"
-        />
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <title>{'Ana Sayfa | Öcallar'}</title>
+          <meta
+            name="description"
+            content="Öcallar ana sayfası - Son haberler, duyurular ve hızlı erişim"
+          />
+          <meta
+            property="og:title"
+            content="Ana Sayfa"
+          />
+          <meta
+            property="og:description"
+            content="Öcallar ana sayfası - Son haberler, duyurular ve hızlı erişim"
+          />
+        </Helmet>
+      </HelmetProvider>
       <LoadingSpinner loadingCompleted={true} />
       <Info />
       {/* <Feature /> */}
