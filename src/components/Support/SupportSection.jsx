@@ -1,29 +1,37 @@
 import React from 'react'
 import SupportForm from './SupportForm'
 import SupportInfo from './SupportInfo'
+import './Support.css' // CSS'i import etmeyi unutma
 
-const SupportSection = ({ titleBox, formFields, submitButton, info }) => {
+const SupportSection = ({ header, supportSection }) => {
+  const { titleBox, formFields, submitButton, info, kvkkText, kvkkLink } = supportSection
+
   return (
     <section className="support-section">
       <div className="auto-container">
-        <div className="inner-container">
-          <div className="row clearfix">
-            <div className="col-lg-7 col-md-12 col-sm-12 inner-column">
-              <div className="inner-box">
-                <div className="sec-title light left">
-                  <h5>{titleBox.subtitle}</h5>
-                  <h2>{titleBox.title}</h2>
-                  <p>{titleBox.text}</p>
-                </div>
-                <SupportForm
-                  fields={formFields}
-                  submitButton={submitButton}
-                />
-              </div>
-            </div>
-            <div className="col-lg-5 col-md-12 col-sm-12 info-column">
-              <SupportInfo {...info} />
-            </div>
+        {/* Başlık Alanı (Eski WorldCyber yerine) */}
+        <div className="sec-title">
+          <h2>{header.title}</h2>
+          <p>{header.text}</p>
+        </div>
+
+        <div className="support-container">
+          {/* Sol Taraf: Form */}
+          <div className="form-column">
+            <h3 style={{ marginBottom: '20px', color: '#2b2b2b', fontWeight: '700' }}>
+              Bize Yazın
+            </h3>
+            <SupportForm
+              fields={formFields}
+              submitButton={submitButton}
+              kvkkText={kvkkText}
+              kvkkLink={kvkkLink}
+            />
+          </div>
+
+          {/* Sağ Taraf: Bilgi Kartı */}
+          <div className="info-column">
+            <SupportInfo {...info} />
           </div>
         </div>
       </div>

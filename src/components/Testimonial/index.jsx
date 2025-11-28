@@ -1,38 +1,23 @@
 import React from 'react'
 import TestimonialSlider from './TestimonialSlider'
 import { testimonialsData } from './testimonial-data'
+import './Testimonial.css' // CSS dosyasını bağla
 
 const Testimonial = () => {
   return (
-    <section
-      className="testimonial-section"
-      style={{
-        backgroundImage: 'url(/uploads/images/background/testimonial-bg.jpg)',
-      }}
-    >
-      <div className="auto-container">
-        <div className="title-box">
-          <div className="row clearfix">
-            <div className="col-lg-6 col-md-12 col-sm-12 title-column">
-              <div className="sec-title right">
-                <h5>Öcallar Petrol</h5>
-                <h2>
-                  Müşteri <br /> Yorumları
-                </h2>
-              </div>
-            </div>
-
-            <div className="col-lg-6 col-md-12 col-sm-12 text-column">
-              <div className="text">
-                <p>Müşteri yorumlarımızı aşağıdaki bölümden inceleyebilirsiniz</p>
-              </div>
-            </div>
-          </div>
+    <div className="testimonial-section">
+      <div className="auto-container testimonial-content-wrapper">
+        <div className="sec-title centred mb-12">
+          <h5>Öcallar Petrol</h5>
+          <h2 className="mb-4">İş Ortaklarımız Ne Diyor?</h2>
+          <p style={{ maxWidth: '700px', margin: '0 auto' }}>
+            Yıllardır birlikte yürüdüğümüz değerli iş ortaklarımızın ve müşterilerimizin deneyimleri
+            bizim en büyük referansımızdır.
+          </p>
         </div>
-
         <TestimonialSlider testimonials={testimonialsData} />
       </div>
-    </section>
+    </div>
   )
 }
 

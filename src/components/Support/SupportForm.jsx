@@ -1,44 +1,65 @@
 import React from 'react'
 
-const SupportForm = ({ fields, submitButton }) => {
+const SupportForm = ({ fields, submitButton, kvkkText, kvkkLink }) => {
   return (
     <form
       action="#"
       method="post"
       className="submit-form"
     >
-      {fields.map((field, index) =>
-        field.type === 'textarea' ? (
+      <div className="form-grid">
+        {fields.map((field, index) => (
           <div
-            className="form-group"
+            className={`form-group ${field.width === 'full' ? 'full-width' : ''}`}
             key={index}
           >
-            <textarea
-              name={field.name}
-              placeholder={field.placeholder}
-            ></textarea>
+            {field.type === 'textarea' ? (
+              <textarea
+                name={field.name}
+                placeholder={field.placeholder}
+                required={field.required}
+              ></textarea>
+            ) : (
+              <input
+                type={field.type}
+                name={field.name}
+                placeholder={field.placeholder}
+                required={field.required}
+              />
+            )}
           </div>
-        ) : (
-          <div
-            className="form-group"
-            key={index}
+        ))}
+
+        {/* KVKK Onay Kutusu */}
+        <div className="kvkk-group">
+          <input
+            type="checkbox"
+            id="kvkk-check"
+            required
+          />
+          <label htmlFor="kvkk-check">
+            {kvkkText}{' '}
+            {kvkkLink && (
+              <a
+                href={kvkkLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Aydınlatma Metni
+              </a>
+            )}
+          </label>
+        </div>
+
+        {/* Submit Butonu */}
+        <div className="form-group full-width">
+          <button
+            type="submit"
+            className="submit-btn"
           >
-            <input
-              type={field.type}
-              name={field.name}
-              placeholder={field.placeholder}
-              required={field.required || false}
-            />
-          </div>
-        ),
-      )}
-      <div className="form-group message-btn">
-        <button
-          type="submit"
-          className={submitButton.className}
-        >
-          {submitButton.text}
-        </button>
+            {submitButton.text} <i className="fas fa-paper-plane ms-2"></i>
+          </button>
+        </div>
       </div>
     </form>
   )

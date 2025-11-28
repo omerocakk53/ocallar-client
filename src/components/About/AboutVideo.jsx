@@ -1,22 +1,22 @@
 import React from 'react'
 
-const AboutVideo = ({ image, videoUrl }) => {
+const AboutVideo = ({ image, onOpenModal }) => {
   return (
-    <div className="video-inner">
-      <figure className="image-box">
+    <div className="video-wrapper">
+      <div className="video-inner">
         <img
           src={image}
-          alt="About section"
+          alt="Tanıtım Videosu"
         />
-      </figure>
-      <div className="video-btn">
-        <a
-          href={videoUrl}
-          className="lightbox-image"
-          data-caption=""
+
+        <div
+          className="play-btn-box"
+          onClick={onOpenModal}
         >
-          <i className="fas fa-play"></i>
-        </a>
+          <div className="play-btn-inner">
+            <i className="fas fa-play"></i>
+          </div>
+        </div>
       </div>
     </div>
   )

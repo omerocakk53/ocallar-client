@@ -3,7 +3,7 @@ import React from 'react'
 const ServiceItem = ({ item, index }) => {
   return (
     // col-lg-2 yaparak yan yana 6 tane logo sığmasını sağladık (Daha şık durur)
-    <div className="col-lg-2 col-md-4 col-6 service-block">
+    <div className="col-lg- col-md-4 col-6 service-block">
       <div
         className="service-block-one wow fadeInUp"
         data-wow-delay={item.delay || `${index * 100}ms`}

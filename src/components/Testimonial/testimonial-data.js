@@ -1,37 +1,30 @@
 export const testimonialsData = [
   {
     id: 1,
-    text: 'Gerçekten harika bir hizmet. Yakıt kalitesi ve personel ilgisi mükemmel. Her zaman tercihim Öcallar Petrol olacak.',
-    author: 'Ahmet Yılmaz',
-    designation: 'Developer',
-    image: '/uploads/images/resource/about-1.jpg',
+    text: 'Öcallar Petrol ile çalışmaya başladığımızdan beri filomuzdaki araçların bakım maliyetleri düştü. Orijinal ürün garantisi ve zamanında sevkiyat bizim için çok değerli.',
+    author: 'Mustafa Çelik',
+    designation: 'Çelik Lojistik - Filo Müdürü',
+    image: 'https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png', // Profil resmi 1
   },
   {
     id: 2,
-    text: 'Yolda kalmıştım, hızlıca yardımcı oldular. Sadece bir petrol istasyonu değil, aynı zamanda bir yol arkadaşı gibiler. Teşekkürler!',
-    author: 'Ayşe Kaya',
-    designation: 'Öğretmen',
-    image: '/uploads/images/resource/about-1.jpg',
+    text: 'Sanayi sitesindeki dükkanımda yıllardır Castrol ürünlerini Öcallar güvencesiyle satıyorum. Hem ürün çeşitliliği hem de satış sonrası destekleri mükemmel.',
+    author: 'Hasan Yılmaz',
+    designation: 'Yılmaz Oto Servis - İşletme Sahibi',
+    image: 'https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png', // Profil resmi 2
   },
   {
     id: 3,
-    text: 'Temiz tuvaletleri ve güler yüzlü çalışanları için bile tercih edilir. Market kısmı da oldukça zengin. Başarılar dilerim.',
-    author: 'Mehmet Öztürk',
-    designation: 'Esnaf',
-    image: '/uploads/images/resource/about-1.jpg',
+    text: 'Bir toptancıdan fazlası. Stoklarında her zaman aradığımız ürünü bulabiliyoruz. Acil durumlarda kendi araçlarıyla parça yetiştirdikleri çok olmuştur.',
+    author: 'Serkan Demir',
+    designation: 'Demir Nakliyat',
+    image: 'https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png', 
   },
   {
     id: 4,
-    text: 'Yakıt kalitesi ve personel ilgisi mükemmel. Her zaman tercihim Öcallar Petrol olacak.',
-    author: 'Mert Aydemir',
-    designation: 'Müşteri',
-    image: '/uploads/images/resource/about-1.jpg',
-  },
-  {
-    id: 5,
-    text: 'Kaliteli hizmetler ve personel ilgisi mükemmel.',
-    author: 'Nazlı Turan',
-    designation: 'Müşteri',
-    image: '/uploads/images/resource/about-1.jpg',
+    text: 'Bölgedeki en güvenilir tedarikçi. Fiyat istikrarı ve ödeme kolaylıkları sayesinde ticaretimizi güvenle sürdürüyoruz. Teşekkürler Öcallar Ailesi.',
+    author: 'Mehmet Öz',
+    designation: 'Öz Kardeşler Otomotiv',
+    image: 'https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png', 
   },
 ]

@@ -1,20 +1,26 @@
 import React from 'react'
 
-const TestimonialItem = ({ testimonial, isOpen }) => {
+const TestimonialItem = ({ item }) => {
   return (
-    <div className="client-thumbs-carousel owl-carousel owl-theme owl-nav-none owl-dots-none owl-loaded owl-drag">
-      <div className={`owl-item ${isOpen ? 'active' : ''}`}>
-        <div className="thumb-item">
-          <figure className="thumb-box">
-            <img
-              src={testimonial.image}
-              alt={testimonial.author}
-            />
-          </figure>
-          <div className="info-box">
-            <h5>{testimonial.author}</h5>
-            <span className="designation">{testimonial.designation}</span>
-          </div>
+    <div className="testimonial-card">
+      {/* Arka plan dekoratif tırnak işareti */}
+      <i className="fas fa-quote-right quote-icon"></i>
+
+      <p className="testimonial-text">"{item.text}"</p>
+
+      <div className="author-box">
+        <img
+          src={item.image}
+          alt={item.author}
+          className="author-img"
+          // Resim yoksa placeholder koymak için:
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/60'
+          }}
+        />
+        <div className="author-info">
+          <h5>{item.author}</h5>
+          <span>{item.designation}</span>
         </div>
       </div>
     </div>
