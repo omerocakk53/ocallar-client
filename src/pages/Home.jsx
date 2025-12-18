@@ -35,6 +35,7 @@ const Home = () => {
         </Helmet>
       </HelmetProvider>
       <LoadingSpinner loadingCompleted={true} />
+<<<<<<< HEAD
       <About />
       <PartnersAndServices />
       <Service />
@@ -42,6 +43,18 @@ const Home = () => {
       <Testimonial />
       <News />
       <Support />
+=======
+      <Info />
+      <AnnualStats />
+      <About />
+      {/* Araya görsel bir ayrım (Divider) koymak istersen buraya eklenebilir */}
+      <Service />
+      <Project />
+      <Support />
+      {/* Support bölümü genellikle farklı bir arka plan rengine sahip olur, dikkat çeker */}
+      <Testimonial />
+      <News />
+>>>>>>> ac52c62c6028f29248758adc4a6c83eb85ff3d47
       <CTA />
     </>
   )

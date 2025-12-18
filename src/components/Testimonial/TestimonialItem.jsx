@@ -1,7 +1,8 @@
 import React from 'react'
 
-const TestimonialItem = ({ testimonial, isOpen }) => {
+const TestimonialItem = ({ item }) => {
   return (
+<<<<<<< HEAD
     <div
       className={`transition-all duration-500 transform ${isOpen ? 'scale-110' : 'scale-90 opacity-40 grayscale'}`}
     >
@@ -29,6 +30,27 @@ const TestimonialItem = ({ testimonial, isOpen }) => {
           <span className="text-[10px] font-bold text-bg/40 uppercase tracking-[0.2em] mt-1">
             {testimonial.designation}
           </span>
+=======
+    <div className="testimonial-card">
+      {/* Arka plan dekoratif tırnak işareti */}
+      <i className="fas fa-quote-right quote-icon"></i>
+
+      <p className="testimonial-text">"{item.text}"</p>
+
+      <div className="author-box">
+        <img
+          src={item.image}
+          alt={item.author}
+          className="author-img"
+          // Resim yoksa placeholder koymak için:
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/60'
+          }}
+        />
+        <div className="author-info">
+          <h5>{item.author}</h5>
+          <span>{item.designation}</span>
+>>>>>>> ac52c62c6028f29248758adc4a6c83eb85ff3d47
         </div>
 
         {/* Aktiflik İkonu */}
