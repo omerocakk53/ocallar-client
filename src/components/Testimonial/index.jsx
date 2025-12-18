@@ -1,11 +1,9 @@
 import React from 'react'
 import TestimonialSlider from './TestimonialSlider'
 import { testimonialsData } from './testimonial-data'
-import './Testimonial.css' // CSS dosyasını bağla
 
 const Testimonial = () => {
   return (
-<<<<<<< HEAD
     <section
       className="relative py-24 lg:py-32 bg-cover bg-center overflow-hidden"
       style={{
@@ -33,21 +31,11 @@ const Testimonial = () => {
               "Müşterilerimizin memnuniyeti, 43 yıllık tecrübemizin en değerli karşılığıdır."
             </p>
           </div>
-=======
-    <div className="testimonial-section">
-      <div className="auto-container testimonial-content-wrapper">
-        <div className="sec-title centred mb-12">
-          <h5>Öcallar Petrol</h5>
-          <h2 className="mb-4">İş Ortaklarımız Ne Diyor?</h2>
-          <p style={{ maxWidth: '700px', margin: '0 auto' }}>
-            Yıllardır birlikte yürüdüğümüz değerli iş ortaklarımızın ve müşterilerimizin deneyimleri
-            bizim en büyük referansımızdır.
-          </p>
->>>>>>> ac52c62c6028f29248758adc4a6c83eb85ff3d47
         </div>
+
         <TestimonialSlider testimonials={testimonialsData} />
       </div>
-    </div>
+    </section>
   )
 }
 

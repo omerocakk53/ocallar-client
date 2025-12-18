@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AboutVideo = ({ image }) => {
+const AboutVideo = ({ image, videoUrl }) => {
   return (
     <div className="relative group">
       {/* Dekoratif Arka Çerçeve (Antik Altın) */}
@@ -15,7 +15,10 @@ const AboutVideo = ({ image }) => {
 
         {/* Modern Play Butonu */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <a className="group/btn relative flex h-20 w-20 items-center justify-center rounded-full bg-primary/80 backdrop-blur-sm transition-all duration-300 hover:bg-accent">
+          <a
+            href={videoUrl}
+            className="group/btn relative flex h-20 w-20 items-center justify-center rounded-full bg-primary/80 backdrop-blur-sm transition-all duration-300 hover:bg-accent"
+          >
             <i className="fas fa-play text-accent transition-colors group-hover/btn:text-primary"></i>
             {/* Dalga Efekti */}
             <span className="absolute inset-0 animate-ping rounded-full bg-accent/30"></span>

@@ -1,3 +1,5 @@
+// components/About/about-data.js
+
 const aboutData = {
   whoWeAre: {
     title: 'Biz Kimiz?',

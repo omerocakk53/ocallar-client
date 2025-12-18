@@ -1,13 +1,10 @@
 import React from 'react'
-<<<<<<< HEAD
 import footerData from '../Footer/footer-data'
 import { Mail, Map } from 'lucide-react'
-=======
->>>>>>> ac52c62c6028f29248758adc4a6c83eb85ff3d47
 
-const SupportInfo = ({ image, title, address, email, phone, mapsLink }) => {
+const SupportInfo = ({ image, logo, links }) => {
+  const { info } = footerData
   return (
-<<<<<<< HEAD
     <div className="h-full flex flex-col">
       {/* Görsel Alanı - Grayscale BMW stili */}
       <figure className="relative h-64 lg:h-1/2 overflow-hidden">
@@ -60,51 +57,6 @@ const SupportInfo = ({ image, title, address, email, phone, mapsLink }) => {
             </div>
           </div>
         </div>
-=======
-    <div className="info-card">
-      <img
-        src={image}
-        alt={title}
-        className="info-image"
-      />
-
-      <div className="info-content">
-        <h3 style={{ fontSize: '22px', marginBottom: '25px', color: '#fff' }}>
-          İletişim Bilgileri
-        </h3>
-
-        <div className="info-item">
-          <i className="fas fa-map-marker-alt"></i>
-          <div>
-            <h4>Adres</h4>
-            <p>{address}</p>
-            <a
-              href={mapsLink}
-              target="_blank"
-              rel="noreferrer"
-              style={{ fontSize: '13px', textDecoration: 'underline' }}
-            >
-              Haritada Göster
-            </a>
-          </div>
-        </div>
-
-        <div className="info-item">
-          <i className="fas fa-envelope"></i>
-          <div>
-            <h4>E-Posta</h4>
-            <a href={`mailto:${email}`}>{email}</a>
-          </div>
-        </div>
-
-        <div className="info-item">
-          <i className="fas fa-phone"></i>
-          <div>
-            <h4>Telefon</h4>
-            <a href={`tel:${phone}`}>{phone}</a>
-          </div>
-        </div>
->>>>>>> ac52c62c6028f29248758adc4a6c83eb85ff3d47
       </div>
     </div>
   )

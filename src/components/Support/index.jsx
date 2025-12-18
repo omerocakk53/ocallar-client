@@ -1,13 +1,12 @@
 import SupportSection from './SupportSection'
+import WorldCyber from './WorldCyber'
 import supportData from './support-data'
 
 const Support = () => {
   return (
     <>
-      <SupportSection
-        header={supportData.header}
-        supportSection={supportData.supportSection}
-      />
+      <WorldCyber {...supportData.worldCyber} />
+      <SupportSection {...supportData.supportSection} />
     </>
   )
 }

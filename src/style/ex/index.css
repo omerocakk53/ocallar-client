@@ -12,10 +12,10 @@
   --color-accent: #d4af37;
 
   /* Zemin Rengi: Fildişi / Kemik (Beyaz yerine) */
-  --color-bg: #ffffff;
+  --color-bg: #f4f4f2;
 
   /* Açık Gri Alanlar için (Bölüm ayrımları) */
-  --color-gray-bg: #d9d9d9;
+  --color-gray-bg: #eaeded;
 
   /* Metin Rengi */
   --color-text: #0f2c28;

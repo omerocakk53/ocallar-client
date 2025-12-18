@@ -1,12 +1,5 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules'
-import { Link } from 'react-router-dom'
-
-// --- BU SATIRLAR ÇOK ÖNEMLİ ---
-import 'swiper/css'
-import 'swiper/css/pagination'
-// ------------------------------
+import AboutFeatureItem from './AboutFeatureItem'
 
 const AboutContent = ({ subtitle, title, text, features }) => {
   return (
@@ -25,6 +18,7 @@ const AboutContent = ({ subtitle, title, text, features }) => {
           <p className="text-base leading-relaxed text-primary/70 font-medium">{text}</p>
         </div>
       </div>
+
       {/* Ne Satıyoruz? (Kategoriler) Bölümü */}
       <div className="space-y-8 pt-8 border-t border-primary/5">
         <h4 className="text-accent text-[11px] font-black uppercase tracking-[0.3em]">
@@ -37,19 +31,18 @@ const AboutContent = ({ subtitle, title, text, features }) => {
               {...feature}
             />
           ))}
-          <div className="custom-swiper-pagination"></div>
         </div>
+      </div>
 
-        {/* Keşfet Butonu */}
-        <div className="pt-6">
-          <a
-            href="/kurumsal"
-            className="group flex items-center gap-4 text-xs font-black uppercase tracking-widest text-primary hover:text-accent transition-colors"
-          >
-            <span className="h-[2px] w-12 bg-accent transition-all duration-300 group-hover:w-20"></span>
-            KURUMSAL HİKAYEMİZİ OKUYUN
-          </a>
-        </div>
+      {/* Keşfet Butonu */}
+      <div className="pt-6">
+        <a
+          href="/kurumsal"
+          className="group flex items-center gap-4 text-xs font-black uppercase tracking-widest text-primary hover:text-accent transition-colors"
+        >
+          <span className="h-[2px] w-12 bg-accent transition-all duration-300 group-hover:w-20"></span>
+          KURUMSAL HİKAYEMİZİ OKUYUN
+        </a>
       </div>
     </div>
   )

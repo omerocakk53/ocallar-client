@@ -1,5 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import NewsItem from './NewsItem'
@@ -9,16 +8,10 @@ import { useNews } from '@/admin/hooks/useNews'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-=======
-import NewsItem from './NewsItem'
-import { useNews } from '@/admin/hooks/useNews'
-import './News.css' // CSS dosyasını import etmeyi unutma!
->>>>>>> ac52c62c6028f29248758adc4a6c83eb85ff3d47
 
 const News = () => {
   const { news } = useNews()
 
-<<<<<<< HEAD
   return (
     <section className="py-24 lg:py-32 bg-bg">
       {' '}
@@ -68,35 +61,6 @@ const News = () => {
           <div className="hidden lg:block">
             {/* Swiper default oklarını CSS ile de özelleştirebilirsin */}
           </div>
-=======
-  // Eğer haber yoksa bölümü boşuna gösterme veya "Yükleniyor" göster
-  if (!news) return null
-
-  return (
-    <section className="news-section">
-      <div className="auto-container">
-        {/* Başlık */}
-        <div className="sec-title centred">
-          <h5>Öcallar Petrol</h5>
-          <h2>Güncel Haberler & Duyurular</h2>
-        </div>
-
-        {/* Grid Alanı */}
-        <div className="row clearfix">
-          {news.length > 0 ? (
-            news.map((item) => (
-              <NewsItem
-                key={item._id}
-                item={item}
-              />
-            ))
-          ) : (
-            // Haber yoksa kullanıcıya bilgi ver
-            <div className="col-12 text-center py-5">
-              <p className="text-muted">Şu anda güncel bir haber bulunmamaktadır.</p>
-            </div>
-          )}
->>>>>>> ac52c62c6028f29248758adc4a6c83eb85ff3d47
         </div>
       </div>
     </section>
