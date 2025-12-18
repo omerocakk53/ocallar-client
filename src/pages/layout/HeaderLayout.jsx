@@ -1,28 +1,42 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
-import MobileMenu from '@/components/MobileMenu'
 import HeaderGo from '@/components/HeaderGo'
 import { useInView } from 'react-intersection-observer'
 import Banner from '@/components/Banner'
+import MobileMenu from '@/components/MobileMenu'
 
 const HeaderLayout = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-    triggerOnce: false,
-  })
+  const { ref, inView } = useInView({ threshold: 0.1 })
   const [isOpen, setIsOpen] = useState(false)
-  const openMobileMenu = () => setIsOpen(true)
-  const closeMobileMenu = () => setIsOpen(false)
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
   return (
-    <div className={`${isOpen ? 'mobile-menu-visible' : ''}`}>
+    <div className="relative">
       <Header
         ref={ref}
         inView={inView}
-        onMobileNavClick={openMobileMenu}
+        onMobileNavClick={() => setIsOpen(true)}
       />
-      <MobileMenu onClose={closeMobileMenu} />
-      <Banner />
-      <HeaderGo inView={inView} />
+
+      <main>
+        <Banner />
+      </main>
+
+      <HeaderGo
+        inView={inView}
+        onMobileNavClick={() => setIsOpen(true)}
+      />
+
+      <MobileMenu
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
     </div>
   )
 }

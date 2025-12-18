@@ -8,6 +8,7 @@ import fetcher from '@/api/fetcher'
 import { SWRConfig } from 'swr'
 import { Toaster } from 'react-hot-toast'
 import Support from '@/components/Support'
+import './style/tailwind.css'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>

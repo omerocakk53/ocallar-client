@@ -6,19 +6,29 @@ import projectData from './project-data'
 
 const Project = () => {
   return (
-    <section className="project-section">
-      <div className="auto-container">
-        <div className="title-box">
-          <div className="row clearfix">
-            <div className="col-lg-6 col-md-12 col-sm-12 title-column">
-              <div className="sec-title right">
-                <h5>Öcallar Petrol</h5>
-                <h2>Markalarımız</h2>
+    <section className="bg-bg py-24 overflow-hidden">
+      {' '}
+      {/* root bg rengi */}
+      <div className="container mx-auto px-8">
+        <div className="mb-16">
+          <div className="flex flex-wrap items-end -mx-4">
+            {/* Başlık Alanı */}
+            <div className="w-full lg:w-1/2 px-4 mb-6 lg:mb-0">
+              <div className="border-l-4 border-accent pl-6 uppercase">
+                {' '}
+                {/* root accent rengi */}
+                <h5 className="text-accent text-[11px] font-black tracking-[0.3em] mb-2">
+                  Öcallar Petrol
+                </h5>
+                <h2 className="text-primary text-4xl lg:text-5xl font-extrabold tracking-tighter">
+                  Markalarımız
+                </h2>
               </div>
             </div>
-            <div className="col-lg-6 col-md-12 col-sm-12 text-column">
+            {/* Metin Alanı */}
+            <div className="w-full lg:w-1/2 px-4 lg:text-right">
               <div className="text">
-                <p>
+                <p className="text-primary/70 text-sm font-medium leading-relaxed max-w-lg lg:ml-auto">
                   Öcallar Petrol ailesinin bir parçası olan tüm çözüm ortaklarımızı
                   inceleyebilirsiniz.
                 </p>
@@ -36,59 +46,45 @@ const Project = () => {
         }}
         pagination={false}
         navigation={false}
-        spaceBetween={30} // Kartlar arası boşluk
+        spaceBetween={30}
         breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          640: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 4, // Masaüstünde yan yana 4 marka
-          },
-          1400: {
-            slidesPerView: 5, // Geniş ekranda yan yana 5 marka
-          },
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 4 },
+          1400: { slidesPerView: 5 },
         }}
-        className="project-carousel theme-carousel"
+        className="px-4 lg:px-8"
       >
         {projectData.map((project) => (
           <SwiperSlide key={project.id}>
-            <div className="project-block-one">
-              <div
-                className="inner-box"
-                style={{ position: 'relative', background: '#fff' }} // Arka plan beyaz olsun
-              >
-                <figure
-                  className="image-box"
-                  style={{
-                    height: '230px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
+            <div className="group transition-all duration-500">
+              <div className="relative bg-white border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                {/* Logo Alanı */}
+                <figure className="h-[230px] flex items-center justify-center p-8 overflow-hidden">
                   <img
                     src={project.imgSrc}
                     alt={project.title}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'contain', // Logoların kesilmesini engeller
-                      padding: '20px', // Kenarlardan biraz boşluk
-                    }}
+                    className="max-w-full max-h-full object-contain filter grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110"
                   />
                 </figure>
-                <div
-                  className="lower-content"
-                  style={{ zIndex: 2 }}
-                >
-                  <p>{project.subtitle}</p>
-                  <h2>
-                    <a href={project.link}>{project.title}</a>
+
+                {/* Alt İçerik Alanı */}
+                <div className="p-8 border-t border-primary/5 text-center relative z-10 bg-white">
+                  <p className="text-accent text-[10px] font-black uppercase tracking-[0.2em] mb-2 opacity-60 group-hover:opacity-100 transition-opacity">
+                    {project.subtitle}
+                  </p>
+                  <h2 className="text-primary text-lg font-bold tracking-tight uppercase">
+                    <a
+                      href={project.link}
+                      className="hover:text-accent transition-colors"
+                    >
+                      {project.title}
+                    </a>
                   </h2>
                 </div>
+
+                {/* BMW Tarzı Altın Çizgi Efekti */}
+                <div className="absolute bottom-0 left-0 w-0 h-1 bg-accent transition-all duration-500 group-hover:w-full" />
               </div>
             </div>
           </SwiperSlide>

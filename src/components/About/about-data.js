@@ -1,27 +1,39 @@
 // components/About/about-data.js
 
 const aboutData = {
-  video: {
-    image: '/uploads/images/resource/bg-video.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=Ycjvu86MAg8',
+  whoWeAre: {
+    title: 'Biz Kimiz?',
+    text: '1982 yılından beri otomotiv sektöründe güven ve kaliteyi bir araya getiren Öcallar Otomotiv, Batı Karadeniz bölgesinin lider distribütörlerinden biridir. 43 yıllık köklü geçmişimizle, sadece bir yedek parçacı değil, çözüm ortağıyız.',
+    image: 'https://www.hca.com.tr/webimg/img/blog/ofis-dekorasyonlari-tasarim-fikirleri.jpg',
   },
-  content: {
-    subtitle: 'Öcallar Petrol',
-    title: 'Castrol Türkiye',
-    text: `Castrol POWER1 RACING, zorlu yarış pisti gerekliliklerini karşılamak üzere, yarış tecrübesi ve teknolojisi kullanılarak geliştirildi. Yeni ve geliştirilmiş formülasyonuyla bu tam sentetik yağın, zorlu yarış pisti koşullarında güçlü kaldığı ve üstün ivme sağladığı kanıtlandı.`,
+  whatWeDo: {
+    subtitle: 'Öcallar Otomotiv',
+    title: 'Neler Yapıyoruz?',
+    text: 'Castrol ana distribütörü olarak madeni yağ tedariği sağlıyor, geniş lojistik ağımızla Zonguldak, Düzce ve Bartın bölgelerine kesintisiz hizmet veriyoruz. Profesyonel kadromuzla teknik danışmanlık ve saha desteği sunuyoruz.',
+  },
+  whatWeSell: {
+    title: 'Ne Satıyoruz?',
     features: [
-      // {
-      //   icon: 'flaticon-computer-1',
-      //   title: 'Özellik 1',
-      //   description: 'Açıklama',
-      //   link: '#',
-      // },
-      // {
-      //   icon: 'flaticon-browser-1',
-      //   title: 'Özellik 2',
-      //   description: 'Açıklama',
-      //   link: '#',
-      // },
+      {
+        icon: 'Fuel',
+        title: 'Madeni Yağlar',
+        description: 'Castrol ve BP markalı binek, ticari ve endüstriyel yağların tamamı.',
+      },
+      {
+        icon: 'Cog',
+        title: 'Yedek Parça',
+        description: 'Ağır vasıta ve binek araçlar için dünya markası yedek parçalar.',
+      },
+      {
+        icon: 'Battery',
+        title: 'Akü Çözümleri',
+        description: 'Yüksek performanslı akü grupları ve enerji çözümleri.',
+      },
+      {
+        icon: 'Truck',
+        title: 'Lojistik Hizmet',
+        description: 'Hızlı ve güvenilir dağıtım ile kapıya teslim tedarik.',
+      },
     ],
   },
 }

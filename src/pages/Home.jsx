@@ -8,10 +8,11 @@ import Feature from '@/components/Feature'
 import Info from '@/components/Info'
 import LoadingSpinner from '@/components/LoadingSpinner'
 import News from '@/components/News'
-import Project from '@/components/Project'
-import Service from '@/components/Service'
 import Support from '@/components/Support'
 import Testimonial from '@/components/Testimonial'
+import PartnersAndServices from '@/components/PartnersAndServices'
+import Service from '@/components/Service'
+import Project from '@/components/Project'
 
 const Home = () => {
   return (
@@ -34,16 +35,13 @@ const Home = () => {
         </Helmet>
       </HelmetProvider>
       <LoadingSpinner loadingCompleted={true} />
-      <Info />
-      {/* <Feature /> */}
       <About />
+      <PartnersAndServices />
       <Service />
       <Project />
-      <AnnualStats />
-      <Support />
       <Testimonial />
       <News />
-      {/* <Clients /> */}
+      <Support />
       <CTA />
     </>
   )

@@ -1,25 +1,15 @@
 import React from 'react'
 
-const WorldCyber = ({ subtitle, pattern }) => {
+const WorldCyber = ({ subtitle }) => {
   return (
-    <section className="world-cyber-off bg-color-1">
-      {/* <div
-        className="pattern-layer"
-        style={{
-          backgroundImage: `url(${pattern})`,
-          backgroundSize: 'contain',
-        }}
-      ></div> */}
-      <div className="auto-container">
-        <div className="sec-title centred">
-          <h5>{subtitle}</h5>
+    <section className="bg-bg pt-20">
+      <div className="container mx-auto px-8">
+        <div className="flex items-center gap-4">
+          <div className="h-[1px] w-12 bg-accent"></div>
+          <h5 className="text-primary text-[11px] font-black uppercase tracking-[0.5em]">
+            {subtitle}
+          </h5>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     </section>
   )

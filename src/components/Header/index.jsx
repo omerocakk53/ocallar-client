@@ -1,130 +1,63 @@
-import React from 'react'
+import React, { useState, useEffect, forwardRef } from 'react'
 import Logo from './Logo'
-import SocialLink from '../SocialLink'
 import NavItem from './NavItem'
 import { navItems } from './header-data'
-import { useSocial } from '@/admin/hooks/web-management/useSocial'
-import footerData from '../Footer/footer-data'
 
-const Header = ({ ref, inView, onMobileNavClick }) => {
-  const { social } = useSocial()
-  const { info } = footerData
+const Header = forwardRef(({ onMobileNavClick }, ref) => {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 30)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <header
       ref={ref}
-      className={`main-header style-one ${inView ? '' : 'fixed-header'}`}
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ${
+        isScrolled ? 'bg-[#f4f4f2]/95 backdrop-blur-md shadow-xl' : 'bg-[#f4f4f2]/60'
+      }`}
     >
-      <div className="header-top">
-        <div
-          className="auto-container"
-          style={{ maxWidth: 'none' }}
-        >
-          <div className="top-inner clearfix">
-            <ul className="info top-left pull-left">
-              <li>
-                <i className="fas fa-map-marker-alt"></i>
-                {info.address}
-              </li>
-              <li>
-                <i className="fas fa-envelope"></i>
-                E-Posta <a href={`mailto:${info.email}`}>{info.email}</a>
-              </li>
-              <li>
-                <i className="fas fa-phone"></i>
-                Telefon <a href={`tel:${info.phone}`}>{info.phone}</a>
-              </li>
-              <li>
-                <i className="fas fa-fax"></i>
-                Faks <a href={`tel:${info.faks}`}>{info.faks}</a>
-              </li>
+      <div className="container mx-auto px-8">
+        <div className="flex items-center justify-between h-20 lg:h-28 transition-all duration-500">
+          <Logo src="/uploads/images/sidebar-logo.png" />
+
+          {/* Masaüstü Navigasyon */}
+          <nav className="hidden lg:block">
+            <ul className="flex items-center gap-4">
+              {navItems.map((item, index) => (
+                <NavItem
+                  key={index}
+                  {...item}
+                />
+              ))}
             </ul>
-            <div className="top-right pull-right">
-              <ul className="social-links clearfix">
-                {social.map((item, index) => (
-                  <SocialLink
-                    key={index}
-                    href={item.socialLink}
-                    icon={item.socialIcon}
-                  />
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="header-lower">
-        <div className="auto-container">
-          <div className="outer-box clearfix">
-            <Logo
-              src="/uploads/images/logo.png"
-              alt="Ana Logo"
-            />
-            <div className="menu-area pull-right">
-              <div
-                onClick={onMobileNavClick}
-                className="mobile-nav-toggler"
-              >
-                <i className="icon-bar"></i>
-                <i className="icon-bar"></i>
-                <i className="icon-bar"></i>
-              </div>
-              <nav className="main-menu navbar-expand-md navbar-light">
-                <div
-                  className="collapse navbar-collapse show clearfix"
-                  id="navbarSupportedContent"
-                >
-                  <ul className="navigation clearfix">
-                    {navItems.map((item, index) => (
-                      <NavItem
-                        key={index}
-                        href={item.href}
-                        label={item.label}
-                        subItems={item.subItems}
-                      />
-                    ))}
-                  </ul>
-                </div>
-              </nav>
-              <div className="menu-right-content clearfix">
-                <div className="btn-box">
-                  <a
-                    href="#"
-                    className="theme-btn style-one"
-                  >
-                    TEKLİF AL
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="sticky-header">
-        <div className="auto-container">
-          <div className="outer-box clearfix">
-            <Logo
-              src="/uploads/images/logo.png"
-              alt="Sticky Logo"
-            />
-            <div className="menu-area pull-right">
-              <nav className="main-menu clearfix">
-                <ul className="navigation clearfix">
-                  {navItems.map((item, index) => (
-                    <NavItem
-                      key={index}
-                      href={item.href}
-                      label={item.label}
-                      subItems={item.subItems}
-                    />
-                  ))}
-                </ul>
-              </nav>
-            </div>
+          </nav>
+
+          <div className="flex items-center gap-6">
+            <a
+              href="#"
+              className="relative group overflow-hidden px-10 py-4 bg-[#2b2b2b] text-white text-[11px] font-black tracking-[0.25em] uppercase transition-all duration-300"
+            >
+              <span className="relative z-10">TEKLİF AL</span>
+              <div className="absolute inset-0 bg-[#d4af37] translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
+            </a>
+
+            {/* Mobil Menü Butonu - onMobileNavClick'i tetikler */}
+            <button
+              onClick={onMobileNavClick}
+              className="lg:hidden flex flex-col gap-1.5 p-2 text-[#2b2b2b]"
+            >
+              <span className="w-7 h-[2px] bg-current" />
+              <span className="w-7 h-[2px] bg-current" />
+              <span className="w-5 h-[2px] bg-current self-end" />
+            </button>
           </div>
         </div>
       </div>
     </header>
   )
-}
+})
 
 export default Header

@@ -18,7 +18,7 @@ const supportData = {
     submitButton: { text: 'Mesajı Gönder', className: 'theme-btn style-one' },
     info: {
       image: '/uploads/images/resource/info-1.jpg',
-      logo: '/uploads/images/icons/info-logo.png',
+      logo: '/uploads/images/shape/shape-2.png',
       company: 'Öcallar Petrol',
       links: [{ text: 'Öcallar Petrol', href: '#' }],
     },

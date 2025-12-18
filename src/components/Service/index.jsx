@@ -1,56 +1,77 @@
 import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, FreeMode } from 'swiper/modules'
+import { Link } from 'react-router-dom'
 import ServiceItem from './ServiceItem'
 import serviceData from './service-data'
-import { Link } from 'react-router-dom'
+
+import 'swiper/css'
+import 'swiper/css/free-mode'
 
 const Service = () => {
   return (
-    <section className="service-section">
-      <div className="auto-container">
-        <div className="title-box">
-          <div className="row clearfix">
-            <div className="col-lg-6 col-md-12 col-sm-12 title-column">
-              <div className="sec-title right">
-                <h5>Öcallar Petrol</h5>
-                <h2>Tedarikçilerimiz</h2>
-              </div>
+    <section className="bg-bg py-24 lg:py-32 overflow-hidden">
+      <div className="container mx-auto px-8">
+        {/* Başlık Bölümü - Yapı Korundu */}
+        <div className="flex flex-wrap items-end -mx-4 mb-20">
+          <div className="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+            <div className="border-l-4 border-accent pl-6">
+              <h5 className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-2">
+                Öcallar Petrol
+              </h5>
+              <h2 className="text-primary text-4xl lg:text-5xl font-extrabold tracking-tighter uppercase">
+                Tedarikçilerimiz
+              </h2>
             </div>
-            <div className="col-lg-6 col-md-12 col-sm-12 text-column">
-              <div className="text">
-                <p>
-                  Öcallar Petrol ailesinin bir parçası olan tüm çözüm ortaklarımızı
-                  inceleyebilirsiniz.
-                </p>
-              </div>
-            </div>
+          </div>
+          <div className="w-full lg:w-1/2 px-4 lg:text-right">
+            <p className="text-primary/70 text-sm font-medium leading-relaxed max-w-lg lg:ml-auto">
+              Öcallar Petrol ailesinin bir parçası olan tüm çözüm ortaklarımızı kesintisiz bir
+              akışla inceleyebilirsiniz.
+            </p>
           </div>
         </div>
 
-        <div className="inner-content">
-          <div className="row clearfix">
+        {/* Logolar için Swiper Slider */}
+        <div className="inner-content -mx-8 lg:-mx-16">
+          <Swiper
+            modules={[Autoplay, FreeMode]}
+            loop={true}
+            freeMode={true}
+            speed={4000} // Akış hızı (Premium hissi için yavaş ve sürekli)
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            slidesPerView={2}
+            spaceBetween={20}
+            breakpoints={{
+              640: { slidesPerView: 3, spaceBetween: 30 },
+              1024: { slidesPerView: 5, spaceBetween: 40 },
+              1400: { slidesPerView: 6, spaceBetween: 50 },
+            }}
+            className="logo-slider"
+          >
             {serviceData.map((item, index) => (
-              <ServiceItem
-                key={index}
-                item={item}
-                index={index}
-              />
+              <SwiperSlide key={index}>
+                <ServiceItem
+                  item={item}
+                  index={index}
+                />
+              </SwiperSlide>
             ))}
-            <div
-              className="more-btn-box text-center"
-              style={{ marginTop: '40px' }}
-            >
-              <Link
-                to="/#"
-                className="theme-btn style-two"
-              >
-                <i
-                  className="fas fa-arrow-right"
-                  style={{ marginRight: '10px' }}
-                ></i>
-                <span>Tüm Tedarikçilerimizi Gör</span>
-              </Link>
-            </div>
-          </div>
+          </Swiper>
+        </div>
+
+        {/* CTA Butonu */}
+        <div className="mt-20 text-center">
+          <Link
+            to="/tedarikciler"
+            className="group inline-flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.3em] text-primary"
+          >
+            <span className="h-[1px] w-12 bg-accent transition-all duration-500 group-hover:w-20"></span>
+            Tüm Listeyi İncele
+          </Link>
         </div>
       </div>
     </section>

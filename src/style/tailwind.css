@@ -9,18 +9,33 @@
   font-style: normal;
 }
 
+body {
+  background-color: rgb(214, 214, 214);
+}
+
 html {
   font-size: 16px;
 }
 
 @theme {
-  --color-primary: #4300ff;
-  --color-secondary: #00caff;
-  --color-lightGray: #f2f2f2;
-  --color-light: #f9fafb;
-  --color-odanet-blue: #1169ab;
+  /* Ana Renk: Derin Orman Yeşili (Eski mavi yerlerine) */
+  --color-primary: #2b2b2b;
 
-  --color-indigo-blue: #23456c;
+  /* İkincil Ana Renk (Daha koyu alanlar için) */
+  --color-primary-dark: #000000;
+
+  /* Vurgu Rengi: Antik Altın (Butonlar, ikonlar, hoverlar) */
+  --color-accent: #d4af37;
+
+  /* Zemin Rengi: Fildişi / Kemik (Beyaz yerine) */
+  --color-bg: #f4f4f2;
+
+  /* Açık Gri Alanlar için (Bölüm ayrımları) */
+  --color-gray-bg: #eaeded;
+
+  /* Metin Rengi */
+  --color-text: #0f2c28;
+  --color-text-light: #676767;
 
   --spacing-max-value: 91.6875rem;
 }
@@ -94,6 +109,30 @@ html {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Ana Renk: Derin Orman Yeşili (Eski mavi yerlerine) */
+  --color-primary: #2b2b2b;
+
+  /* İkincil Ana Renk (Daha koyu alanlar için) */
+  --color-primary-dark: #000000;
+
+  /* Vurgu Rengi: Antik Altın (Butonlar, ikonlar, hoverlar) */
+  --color-accent: #d4af37;
+
+  /* Zemin Rengi: Fildişi / Kemik (Beyaz yerine) */
+  --color-bg: #f4f4f2;
+
+  /* Açık Gri Alanlar için (Bölüm ayrımları) */
+  --color-gray-bg: #eaeded;
+
+  /* Metin Rengi */
+  --color-text: #0f2c28;
+  --color-text-light: #676767;
+}
+
+/* Scrool gizleme */
+::-webkit-scrollbar {
+  display: none;
 }
 
 @layer base {
